@@ -43,7 +43,7 @@
         <br>
         <div class="w-[100%] h-[92vh] box-border p-[15px]" id="aboutMe">
             <br>
-            <h1 class="text-[white] text-center text-[30px]">About Me</h1>
+            <h1 class="text-[white] text-center text-[30px]">⟡ About Me ⟡</h1>
             <hr class="border-[#cdf6fa] border-[1px] w-[40%] m-auto shadow-[0px_0px_5px_transparent]">
             <br>
             <!--[#abf1f7]-->
@@ -58,32 +58,44 @@
                 </div>
             </div>
             <br>
-            <div class="flex">
+            <hr>
+            <br>
+            <div class="flex justify-between">
                 <div class="border-[2px] border-[#ec89c6] rounded-[12px] w-[50%]">
                     <iframe title="favorite songs" data-testid="embed-iframe" class="rounded-[12px]" src="https://open.spotify.com/embed/playlist/6Z99HBqeMAzgWFBwcuUikk?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
                 <div class="w-[48%]">
                     <h3 class="text-center">⭐🎈🔁❌</h3>
-                    <p class="text-center text-white">i love tsukarui</p>
+                    <br>
                     <p class="text-[#fae6f0]">➼ huge vocaloid/prsk nerd</p>
                     <p class="text-[#fae6f0]">➼ obsessed w/ rui kamishiro</p>
                     <p class="text-[#fae6f0]">➼ sleep deprived, jacksfilms, and markiplier enjoyer</p>
+                    <p class="text-[#fae6f0]">➼ i love music</p>
+                    <p class="text-[#fae6f0]">➼ D1 javascript/typescript glazer</p>
                     <p class="text-[#fae6f0]">➼ ben? yes? no. hohoho</p>
                 </div>
             </div>
             <br>
+            <hr>
+            <br>
+            <h1 class="text-center text-[30px] text-[#fce1f6]">❀ Hobbies ❀</h1>
+            <br>
             <div class="border-[2px] border-[#abf1f7] box-border p-[10px] grid grid-cols-4 gap-[10px] rounded-[20px] bg-[#455e5e]">
-                <div class="h-[350px] bg-[#f7dfeb] rounded-[18px]">
-                    <h1 class="m-auto block">Reading</h1>
+                <div class="h-[350px] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-auto scrollHidden">
+                    <h1 class="text-[#fce1f6] absolute ml-[45%] mt-[65%] transform translate-x-[-45%] translate-y-[-65%] opacity-100">Reading</h1>
+                    <!--<p class="text-[#fce1f6] opacity-0 hover:opacity-100 bg-[#1d2429]">I  love reading good books! I especially love classics. Nabokov is my favorite author.<br>I also love reading Greek and Roman poetry. And by extension, I love all things Latin! Currently taking it in school (and hope to take Greek in college). The language fascinates me, as well as all the literature that comes out of it. Agricola tres porcos in proelio necavit et sum discipula Linguae Latinae (ദ്ദി˙ᗜ˙)</p>-->
                 </div>
-                <div class="h-[350px] bg-[#f7dfeb] rounded-[18px]">
-
+                <div class="h-[350px] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-auto scrollHidden">
+                    <h1 class="text-[#fce1f6] absolute ml-[45%] mt-[65%] transform translate-x-[-45%] translate-y-[-65%] opacity-100">Writing</h1>
+                    <!--<p class="text-[#fce1f6] opacity-0 hover:opacity-100 bg-[#1d2429]">I've been writing maybe longer than I've been coding. I absolutely love writing, especially creative writing. I like writing poems and short stories. And fanfiction-- a lot of fanfiction. No, you cannot have my Ao3 (◑_◑)</p>-->
                 </div>
-                <div class="h-[350px] bg-[#f7dfeb] rounded-[18px]">
-
+                <div class="h-[350px] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-auto scrollHidden">
+                    <h1 class="text-[#fce1f6] absolute ml-[45%] mt-[65%] transform translate-x-[-45%] translate-y-[-65%] opacity-100">Drawing</h1>
+                    <!--<p class="text-[#fce1f6] opacity-0 hover:opacity-100 bg-[#1d2429]">Not much to say here. I like drawing. I'm not particularly exceptional at it, but I like it anyways. My #1 favorite thing to draw is my wife Rui Kamishiro ♡(˃͈ ˂͈ )</p>-->
                 </div>
-                <div class="h-[350px] bg-[#f7dfeb] rounded-[18px]">
-
+                <div class="h-[350px] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-auto scrollHidden">
+                    <h1 class="text-[#fce1f6] absolute ml-[45%] mt-[65%] transform translate-x-[-45%] translate-y-[-65%] opacity-100">Music</h1>
+                    <!--<p class="text-[#fce1f6] opacity-0 hover:opacity-100 bg-[#1d2429]">If there was one thing I was just as passionate as coding about, if not more, it would be music. I play piano. I'm a member of both choir and the acapella group at my school. Most of all, I love music theory and making music! Perchance I'll be able to get a Soundcloud or something running sometime soon (˶ˆᗜˆ˵)</p>-->
                 </div>
             </div>
             <br>
@@ -95,5 +107,9 @@
     .scrollbar{
         scrollbar-width: thin;
         scrollbar-color: #ec89c6 #160e12;
+    }
+
+    .scrollHidden{
+        scrollbar-width: none;
     }
 </style>
