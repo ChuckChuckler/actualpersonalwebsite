@@ -1,14 +1,22 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
     import folder from "$lib/personalwebsite_imgs/folder.png"
     import folder_opened from "$lib/personalwebsite_imgs/folder_opened.png"
     import text_file from "$lib/personalwebsite_imgs/text_file.png"
 
     import Tab from "$lib/comps/tab.svelte";
+
     import Aboutme from "$lib/comps/aboutme.svelte";
-    import { onMount } from "svelte";
+    import Contact from "$lib/comps/contact.svelte";
+
+    let defaultScreen:string=$state("display:block");
 
     let aboutme:any;
     let aboutmeTab:any;
+
+    let contact:any;
+    let contactTab:any;
 
     onMount(()=>{
         let aboutme = document.getElementById("aboutme")
@@ -20,12 +28,13 @@
     })
 
     export function hideSection(toDelete:string){
-        if(toDelete=="aboutme"){
+        if(toDelete=="about_me.md"){
             aboutme.changeVisible("display:none");
         }
     }
 
     function showSection(toShow:string){
+        defaultScreen="display:none";
         if(toShow=="aboutme"){
             aboutme.changeVisible("display:block");
             aboutmeTab.showTab();
@@ -68,9 +77,17 @@
     <div class="w-[80%] overflow-auto scrollbar">
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex">
             <Tab bind:this={aboutmeTab} tabname="about_me.md" clickFunc={hideSection}></Tab>
+            <Tab tabname="contact.md" clickFunc={hideSection}></Tab>
+        </div>
+        <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
         <br>
+        <div class="box-border p-[30px] text-center" style={defaultScreen}>
+            <h1 class="text-white text-[100px]">(ó﹏ò｡)</h1>
+            <h3 class="text-white text-[20px]">No folder or file open</h3>
+        </div>
         <Aboutme bind:this={aboutme}></Aboutme>
+        <Contact></Contact>
     </div>
 </div>
 

@@ -2,11 +2,11 @@
     import { page } from "$app/state";
     let {tabname, clickFunc} = $props()
     
-    let visibility:string=$state("display:flex");
+    let visibility:string=$state("display:none");
 
     function deleteTab(){
         visibility="display:none";
-        clickFunc("aboutme");
+        clickFunc(tabname);
     }
 
     export function showTab(){
