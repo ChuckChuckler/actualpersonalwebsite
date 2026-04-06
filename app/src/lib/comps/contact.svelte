@@ -5,7 +5,7 @@
 
     export function changeVisible(visible:string){
         visibility=visible;
-    }
+    } 
 </script>
 
 <div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="aboutMe" style={visibility}>
