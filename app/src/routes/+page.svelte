@@ -9,6 +9,7 @@
 
     import Aboutme from "$lib/comps/aboutme.svelte";
     import Contact from "$lib/comps/contact.svelte";
+    import Skillsfolder from "$lib/comps/skillsfolder.svelte";
 
     let defaultScreen:string=$state("display:block");
 
@@ -20,18 +21,20 @@
     let contact:any;
     let contactTab:any;
 
-    onMount(()=>{
-        let aboutMeClicker = document.getElementById("aboutme")
-        if(aboutMeClicker!=null){
-            aboutMeClicker.onclick=function(){
-                showSection(aboutme, aboutmeTab)
-            }
-        }
+    let skillsFolder:any;
+    let skillsFolderTab:any;
 
-        let contactClicker = document.getElementById("contact");
-        if(contactClicker!=null){
-            contactClicker.onclick=function(){
-                showSection(contact, contactTab);
+    onMount(()=>{
+        let idsForClickers = ["aboutme", "contact", "skillsFolder"];
+        let divsForClickers = [aboutme, contact, skillsFolder];
+        let tabsForClickers = [aboutmeTab, contactTab, skillsFolderTab]
+        
+        for(let i:number=0;i<idsForClickers.length;i++){
+            let clicker = document.getElementById(idsForClickers[i])
+            if(clicker!=null){
+                clicker.onclick=function(){
+                    showSection(divsForClickers[i], tabsForClickers[i]);
+                }
             }
         }
     })
@@ -75,7 +78,7 @@
                 <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
                 <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Hackathons</h2>
             </div>
-            <div class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
+            <div id="skillsFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
                 <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
                 <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Skills</h2>
             </div>
@@ -95,8 +98,9 @@
     </div>
     <div class="w-[80%] overflow-auto scrollbar">
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex">
-            <Tab bind:this={aboutmeTab} tabname="about_me.md" xFunc={hideSection} xTarget={aboutme} clickFunc={showSection}></Tab>
-            <Tab bind:this={contactTab} tabname="contact.md" xFunc={hideSection} xTarget={contact} clickFunc={showSection}></Tab>
+            <Tab bind:this={aboutmeTab} tabname="about_me.md" xFunc={hideSection} xTarget={aboutme} clickFunc={showSection} type="text"></Tab>
+            <Tab bind:this={contactTab} tabname="contact.md" xFunc={hideSection} xTarget={contact} clickFunc={showSection} type="text"></Tab>
+            <Tab bind:this={skillsFolderTab} tabname="skills" xFunc={hideSection} xTarget={skillsFolder} clickFunc={showSection} type="folder"></Tab> 
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
@@ -107,6 +111,7 @@
         </div>
         <Aboutme bind:this={aboutme}></Aboutme>
         <Contact bind:this={contact}></Contact>
+        <Skillsfolder bind:this={skillsFolder}></Skillsfolder>
     </div>
 </div>
 
