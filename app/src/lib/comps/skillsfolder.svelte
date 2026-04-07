@@ -9,6 +9,16 @@
     import java from "$lib/personalwebsite_imgs/icons/languages/java.png";
     import py from "$lib/personalwebsite_imgs/icons/languages/py.png";
 
+    import node from "$lib/personalwebsite_imgs/icons/frameworks/nodejs.png";
+    import gsap from "$lib/personalwebsite_imgs/icons/frameworks/gsap.png";
+    import mongo from "$lib/personalwebsite_imgs/icons/frameworks/mongodb.svg";
+    import react from "$lib/personalwebsite_imgs/icons/frameworks/react.png";
+    import tailwind from "$lib/personalwebsite_imgs/icons/frameworks/tailwind.svg";
+    import svelte from "$lib/personalwebsite_imgs/icons/frameworks/svelte.png";
+    import express from "$lib/personalwebsite_imgs/icons/frameworks/expressjs.svg";
+    import flask from "$lib/personalwebsite_imgs/icons/frameworks/flask.png";
+    import godot from "$lib/personalwebsite_imgs/icons/frameworks/godot.png";
+
     let languages:Record<string,any> = {
         HTML:html,
         CSS:css,
@@ -16,6 +26,18 @@
         Typescript:ts,
         Java:java,
         Python:py
+    }
+
+    let frameworksDict:Record<string,any>={
+        NodeJS:node,
+        GSAP:gsap,
+        MongoDB:mongo,
+        React:react,
+        Tailwind:tailwind,
+        Svelte:svelte,
+        ExpressJS:express,
+        Flask:flask,
+        Godot:godot
     }
 
     let fileDirectory:any;
@@ -37,7 +59,7 @@
         }
 
         frameworks.onclick=function(){
-            console.log("hi");
+            showFrameworks();
         }
     })
 
@@ -46,8 +68,21 @@
     }
 
     function showSkills(){
-        languagesDirectoryVisibility="display:grid";
+        languagesDirectoryVisibility="display:block";
         fileDirectoryVisibility="display:none";
+        frameworksDirectoryVisibility="display:none";
+    }
+
+    function showFrameworks(){
+        frameworksDirectoryVisibility="display:block";
+        languagesDirectoryVisibility="display:none";
+        fileDirectoryVisibility="display:none";
+    }
+
+    function returnFiles(){
+        frameworksDirectoryVisibility="display:none";
+        languagesDirectoryVisibility="display:none";
+        fileDirectoryVisibility="display:flex";
     }
 </script>
 
@@ -62,13 +97,31 @@
             <h3 class="mplus text-white">Frameworks/Tools</h3>
         </div>
     </div>
-    <div bind:this={languagesDirectory} style={languagesDirectoryVisibility} class="grid-cols-5">
-        {#each Object.keys(languages) as language}
-            <div class="text-center rounded-[25px] w-[150px] box-border p-[10px] bg-[#49343f] leading-[50px] hover:bg-[#614654]">
-                <img src={languages[language]} alt="html" class="w-[100px] h-[100px] m-auto">
-                <h3 class="mplus text-white">{language}</h3>
-            </div>
-        {/each}
+
+    <div bind:this={languagesDirectory} style={languagesDirectoryVisibility}>
+    <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+    <br>
+        <div class="grid grid-cols-5">
+            {#each Object.keys(languages) as language}
+                <div class="text-center rounded-[25px] w-[150px] box-border p-[10px] bg-[#49343f] leading-[50px] hover:bg-[#614654]">
+                    <img src={languages[language]} alt="html" class="w-[100px] h-[100px] m-auto">
+                    <h3 class="mplus text-white">{language}</h3>
+                </div>
+            {/each}
+        </div>
+    </div>
+
+    <div bind:this={frameworksDirectory} style={frameworksDirectoryVisibility}>
+    <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+    <br>
+        <div class="grid grid-cols-5">
+            {#each Object.keys(frameworksDict) as framework}
+                <div class="text-center rounded-[25px] w-[150px] box-border p-[10px] bg-[#49343f] leading-[50px] hover:bg-[#614654]">
+                    <img src={frameworksDict[framework]} alt="html" class="w-[100px] h-[100px] m-auto">
+                    <h3 class="mplus text-white">{framework}</h3>
+                </div>
+            {/each}
+        </div>
     </div>
 </div>
 
