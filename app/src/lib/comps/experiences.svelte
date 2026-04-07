@@ -3,6 +3,8 @@
     import textfile from "$lib/personalwebsite_imgs/text_file.png";
     import { onMount } from "svelte";
 
+    import HackathonIcon from "./hackathonIcon.svelte";
+
     import bp24 from "$lib/personalwebsite_imgs/hackathons_ysws/bp2024.svg";
     import bp25 from "$lib/personalwebsite_imgs/hackathons_ysws/bp2025.png";
     import charger from "$lib/personalwebsite_imgs/hackathons_ysws/chargerhacks.png";
@@ -74,10 +76,7 @@
         <br>
         <div class="grid grid-cols-4">
             {#each Object.keys(hackathonsList) as hackathon}
-                <div class="text-center rounded-[25px] box-border p-[10px] bg-[#49343f] leading-[50px] hover:bg-[#614654]">
-                    <img src={hackathonsList[hackathon]} alt="html" class="object-contain h-[100px] m-auto">
-                    <h3 class="mplus text-white">{hackathon}</h3>
-                </div>
+                <HackathonIcon iconImage={hackathonsList[hackathon]} iconName={hackathon}></HackathonIcon>
             {/each}
         </div>
     </div>

@@ -2,6 +2,8 @@
     import folder from "$lib/personalwebsite_imgs/folder.png";
     import { onMount } from "svelte";
 
+    import LangIcon from "./langIcon.svelte";
+    
     import html from "$lib/personalwebsite_imgs/icons/languages/html.png";
     import css from "$lib/personalwebsite_imgs/icons/languages/css.png";
     import js from "$lib/personalwebsite_imgs/icons/languages/js.png";
@@ -99,10 +101,7 @@
     <br>
         <div class="grid grid-cols-5">
             {#each Object.keys(languages) as language}
-                <div class="text-center rounded-[25px] w-[150px] box-border p-[10px] bg-[#49343f] leading-[50px] hover:bg-[#614654]">
-                    <img src={languages[language]} alt="html" class="w-[100px] h-[100px] m-auto">
-                    <h3 class="mplus text-white">{language}</h3>
-                </div>
+                <LangIcon iconName={language} iconImg={languages[language]}></LangIcon>
             {/each}
         </div>
     </div>
@@ -112,10 +111,7 @@
     <br>
         <div class="grid grid-cols-5">
             {#each Object.keys(frameworksDict) as framework}
-                <div class="text-center rounded-[25px] w-[150px] box-border p-[10px] bg-[#49343f] leading-[50px] hover:bg-[#614654]">
-                    <img src={frameworksDict[framework]} alt="html" class="w-[100px] h-[100px] m-auto">
-                    <h3 class="mplus text-white">{framework}</h3>
-                </div>
+                <LangIcon iconName={framework} iconImg={frameworksDict[framework]}></LangIcon>
             {/each}
         </div>
     </div>
