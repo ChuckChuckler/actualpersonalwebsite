@@ -12,6 +12,8 @@
 
     let defaultScreen:string=$state("display:block");
 
+    let visibles:any[] = [];
+
     let aboutme:any;
     let aboutmeTab:any;
 
@@ -19,26 +21,37 @@
     let contactTab:any;
 
     onMount(()=>{
-        let aboutme = document.getElementById("aboutme")
-        if(aboutme!=null){
-            aboutme.onclick=function(){
-                showSection("aboutme")
+        let aboutMeClicker = document.getElementById("aboutme")
+        if(aboutMeClicker!=null){
+            aboutMeClicker.onclick=function(){
+                showSection(aboutme, aboutmeTab)
+            }
+        }
+
+        let contactClicker = document.getElementById("contact");
+        if(contactClicker!=null){
+            contactClicker.onclick=function(){
+                showSection(contact, contactTab);
             }
         }
     })
 
-    export function hideSection(toDelete:string){
-        if(toDelete=="about_me.md"){
-            aboutme.changeVisible("display:none");
+    export function hideSection(toDelete:any){
+        toDelete.changeVisible("display:none");
+        visibles.splice(visibles.indexOf(toDelete), 1);
+        if(visibles.length==0){
+            defaultScreen = "display:block";
         }
     }
 
-    function showSection(toShow:string){
+    function showSection(toShow:any, toShowTab:any){
         defaultScreen="display:none";
-        if(toShow=="aboutme"){
-            aboutme.changeVisible("display:block");
-            aboutmeTab.showTab();
+        for(let i:number=0;i<visibles.length;i++){
+            visibles[i].changeVisible("display:none");
         }
+        toShow.changeVisible("display:block");
+        toShowTab.showTab();
+        visibles.push(toShow);
     }
 </script>
 
@@ -68,7 +81,7 @@
                 <img src={text_file} alt="textfile" class="w-[70px] pr-[10px]">
                 <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">about_me.md</h2>
             </div>
-            <div class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
+            <div id="contact" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
                 <img src={text_file} alt="textfile" class="w-[70px] pr-[10px]">
                 <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">contact.md</h2>
             </div>
@@ -76,8 +89,8 @@
     </div>
     <div class="w-[80%] overflow-auto scrollbar">
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex">
-            <Tab bind:this={aboutmeTab} tabname="about_me.md" clickFunc={hideSection}></Tab>
-            <Tab tabname="contact.md" clickFunc={hideSection}></Tab>
+            <Tab bind:this={aboutmeTab} tabname="about_me.md" xFunc={hideSection} xTarget={aboutme}></Tab>
+            <Tab bind:this={contactTab} tabname="contact.md" xFunc={hideSection} xTarget={contact}></Tab>
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
@@ -87,7 +100,7 @@
             <h3 class="text-white text-[20px]">No folder or file open</h3>
         </div>
         <Aboutme bind:this={aboutme}></Aboutme>
-        <Contact></Contact>
+        <Contact bind:this={contact}></Contact>
     </div>
 </div>
 

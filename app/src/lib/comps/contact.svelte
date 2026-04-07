@@ -5,10 +5,10 @@
 
     export function changeVisible(visible:string){
         visibility=visible;
-    } 
+    }
 </script>
 
-<div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="aboutMe" style={visibility}>
+<div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="contact" style={visibility}>
     <h1 class="text-[white] text-center text-[30px] courier">⟡ Contact ⟡</h1>
     <hr class="border-[#cdf6fa] border-[1px] w-[40%] m-auto shadow-[0px_0px_5px_transparent]">
     <br>

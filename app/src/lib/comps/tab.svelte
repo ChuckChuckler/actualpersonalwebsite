@@ -1,12 +1,12 @@
 <script lang="ts">
     import { page } from "$app/state";
-    let {tabname, clickFunc} = $props()
+    let {tabname, xFunc, xTarget} = $props()
     
     let visibility:string=$state("display:none");
 
     function deleteTab(){
         visibility="display:none";
-        clickFunc(tabname);
+        xFunc(xTarget);
     }
 
     export function showTab(){
