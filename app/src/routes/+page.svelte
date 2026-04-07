@@ -52,8 +52,12 @@
             visibles[i].changeVisible("display:none");
         }
         toShow.changeVisible("display:block");
-        toShowTab.showTab();
-        visibles.push(toShow);
+        if(toShowTab!=null){
+            toShowTab.showTab();
+        }
+        if(!visibles.includes(toShow)){
+            visibles.push(toShow);
+        }
     }
 </script>
 
@@ -91,8 +95,8 @@
     </div>
     <div class="w-[80%] overflow-auto scrollbar">
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex">
-            <Tab bind:this={aboutmeTab} tabname="about_me.md" xFunc={hideSection} xTarget={aboutme}></Tab>
-            <Tab bind:this={contactTab} tabname="contact.md" xFunc={hideSection} xTarget={contact}></Tab>
+            <Tab bind:this={aboutmeTab} tabname="about_me.md" xFunc={hideSection} xTarget={aboutme} clickFunc={showSection}></Tab>
+            <Tab bind:this={contactTab} tabname="contact.md" xFunc={hideSection} xTarget={contact} clickFunc={showSection}></Tab>
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
