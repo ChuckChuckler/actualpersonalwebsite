@@ -10,6 +10,7 @@
     import Aboutme from "$lib/comps/aboutme.svelte";
     import Contact from "$lib/comps/contact.svelte";
     import Skillsfolder from "$lib/comps/skillsfolder.svelte";
+    import Experiences from "$lib/comps/experiences.svelte";
 
     let defaultScreen:string=$state("display:block");
 
@@ -24,10 +25,13 @@
     let skillsFolder:any;
     let skillsFolderTab:any;
 
+    let experiencesFolder:any;
+    let experiencesFolderTab:any;
+
     onMount(()=>{
-        let idsForClickers = ["aboutme", "contact", "skillsFolder"];
-        let divsForClickers = [aboutme, contact, skillsFolder];
-        let tabsForClickers = [aboutmeTab, contactTab, skillsFolderTab]
+        let idsForClickers = ["aboutme", "contact", "skillsFolder", "experiencesFolder"];
+        let divsForClickers = [aboutme, contact, skillsFolder, experiencesFolder];
+        let tabsForClickers = [aboutmeTab, contactTab, skillsFolderTab, experiencesFolderTab]
         
         for(let i:number=0;i<idsForClickers.length;i++){
             let clicker = document.getElementById(idsForClickers[i])
@@ -74,9 +78,9 @@
                 <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
                 <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Projects</h2>
             </div>
-            <div class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
+            <div id="experiencesFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
                 <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
-                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Hackathons</h2>
+                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Experiences</h2>
             </div>
             <div id="skillsFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
                 <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
@@ -101,6 +105,7 @@
             <Tab bind:this={aboutmeTab} tabname="about_me.md" xFunc={hideSection} xTarget={aboutme} clickFunc={showSection} type="text"></Tab>
             <Tab bind:this={contactTab} tabname="contact.md" xFunc={hideSection} xTarget={contact} clickFunc={showSection} type="text"></Tab>
             <Tab bind:this={skillsFolderTab} tabname="skills" xFunc={hideSection} xTarget={skillsFolder} clickFunc={showSection} type="folder"></Tab> 
+            <Tab bind:this={experiencesFolderTab} tabname="experiences" xFunc={hideSection} xTarget={experiencesFolder} clickFunc={showSection} type="folder"></Tab> 
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
@@ -112,6 +117,7 @@
         <Aboutme bind:this={aboutme}></Aboutme>
         <Contact bind:this={contact}></Contact>
         <Skillsfolder bind:this={skillsFolder}></Skillsfolder>
+        <Experiences bind:this={experiencesFolder}></Experiences>
     </div>
 </div>
 
