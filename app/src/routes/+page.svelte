@@ -41,6 +41,8 @@
         visibles.splice(visibles.indexOf(toDelete), 1);
         if(visibles.length==0){
             defaultScreen = "display:block";
+        }else{
+            visibles[visibles.length-1].changeVisible("display:block");
         }
     }
 
