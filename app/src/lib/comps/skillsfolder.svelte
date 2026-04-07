@@ -20,29 +20,25 @@
     import godot from "$lib/personalwebsite_imgs/icons/frameworks/godot.png";
 
     let languages:Record<string,any> = {
-        HTML:html,
-        CSS:css,
-        Javascript:js,
-        Typescript:ts,
-        Java:java,
-        Python:py
+        "HTML.png":html,
+        "CSS.png":css,
+        "Javascript.png":js,
+        "Typescript.png":ts,
+        "Java.png":java,
+        "Python.png":py
     }
 
     let frameworksDict:Record<string,any>={
-        NodeJS:node,
-        GSAP:gsap,
-        MongoDB:mongo,
-        React:react,
-        Tailwind:tailwind,
-        Svelte:svelte,
-        ExpressJS:express,
-        Flask:flask,
-        Godot:godot
+        "NodeJS.png":node,
+        "GSAP.png":gsap,
+        "MongoDB.png":mongo,
+        "React.png":react,
+        "Tailwind.png":tailwind,
+        "Svelte.png":svelte,
+        "ExpressJS.png":express,
+        "Flask.png":flask,
+        "Godot.png":godot
     }
-
-    let fileDirectory:any;
-    let languagesDirectory:any;
-    let frameworksDirectory:any;
 
     let fileDirectoryVisibility=$state("display:flex");
     let languagesDirectoryVisibility=$state("display:none");
@@ -87,7 +83,7 @@
 </script>
 
 <div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="skillsFolder" style={visibility}>
-    <div class="flex justify-between w-[40%]" bind:this={fileDirectory} style={fileDirectoryVisibility}>
+    <div class="flex justify-between w-[40%]" style={fileDirectoryVisibility}>
         <div class="text-center rounded-[25px] w-[180px] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]" bind:this={skills}>
             <img src={folder} alt="folderimage" class="w-[150px] h-[150px] m-auto">
             <h3 class="mplus text-white">Languages</h3>
@@ -98,7 +94,7 @@
         </div>
     </div>
 
-    <div bind:this={languagesDirectory} style={languagesDirectoryVisibility}>
+    <div style={languagesDirectoryVisibility}>
     <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
     <br>
         <div class="grid grid-cols-5">
@@ -111,7 +107,7 @@
         </div>
     </div>
 
-    <div bind:this={frameworksDirectory} style={frameworksDirectoryVisibility}>
+    <div style={frameworksDirectoryVisibility}>
     <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
     <br>
         <div class="grid grid-cols-5">
