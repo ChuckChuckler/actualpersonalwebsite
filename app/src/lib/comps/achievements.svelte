@@ -24,32 +24,41 @@
     let codingAchievementsVisibility:string=$state("display:none");
     let otherAchievementsVisibility:string=$state("display:none");
 
+    let iframe:any;
+    let iframeVisibility=$state("display:none");
+    let iframeSrc=$state("https://tailwindcss.com/docs/top-right-bottom-left");
+
     type achievement = {
         placement:string,
         img:any,
-        year:string
+        year:string,
+        link:string
     }
 
     let codingAchievements:Record<string,achievement>={
         "Hack For Humanity":{
             placement:"14th-42nd Place",
             img:hackhumanity,
-            year:"2026"
+            year:"2026",
+            link: "https://devpost.com/software/my-animal-book"
         },
         "Athena Award":{
             placement:"",
             img:athenaAward,
-            year:"2025"
+            year:"2025",
+            link: "https://athena.hackclub.com/award?id=LCINvIBF"
         },
         "DVHacks":{
             placement:"1st Place",
             img:dvhacks,
-            year:"2025"
+            year:"2025",
+            link:"https://devpost.com/software/apollo-fa1up2"
         },
         "KuriusHacks":{
             placement:"3rd Place",
             img:kurius,
-            year:"2024"
+            year:"2024",
+            link:"https://devpost.com/software/treeassistant"
         }
     };
 
@@ -57,37 +66,44 @@
         "National Latin Exam-- Beginning":{
             placement:"Gold Medal",
             img:nle,
-            year:"2023"
+            year:"2023",
+            link:""
         },
         "National Latin Exam-- Intermediate":{
             placement:"Gold Medal",
             img:nle,
-            year:"2024"
+            year:"2024",
+            link:""
         },
         "National Latin Exam-- Intermediate Reading Comp.":{
             placement:"Gold Medal",
             img:nle,
-            year:"2025"
+            year:"2025",
+            link:""
         },
         "National Latin Exam-- Advanced Poetry":{
             placement:"Gold Medal",
             img:nle,
-            year:"2026"
+            year:"2026",
+            link:""
         },
         "Outstanding Achievement in Latin":{
             placement:"",
             img:latin,
-            year:"2023"
+            year:"2023",
+            link:""
         },
         "Short story published in Young Writers USA anthology":{
             placement:"",
             img:youngwriters,
-            year:"2024"
+            year:"2024",
+            link:""
         },
         "Essay published in school journal of history":{
             placement:"",
             img:history,
-            year:"2025"
+            year:"2025",
+            link:""
         }
     }
 
@@ -114,6 +130,17 @@
         otherAchievementsVisibility="display:none";
     }
 
+    function hideIframe(){
+        iframeVisibility="display:none";
+    }
+
+    function updateIframe(link:string){
+        iframeSrc=link;
+        iframe.onload=function(){
+            iframeVisibility="display:block";
+        }
+    }
+
     export function changeVisible(visible:string){
         visibility=visible;
     }
@@ -138,8 +165,18 @@
         <br>
         <div class="grid grid-cols-2 gap-[15px]">
             {#each Object.keys(codingAchievements) as achievement}
-                <Achievement img={codingAchievements[achievement].img} achievementName={achievement} placement={codingAchievements[achievement].placement} year={codingAchievements[achievement].year}></Achievement>
+                <button onclick={function(){
+                    if(codingAchievements[achievement].link!=""){
+                        updateIframe(codingAchievements[achievement].link);
+                    }
+                }}>
+                    <Achievement img={codingAchievements[achievement].img} achievementName={achievement} placement={codingAchievements[achievement].placement} year={codingAchievements[achievement].year}></Achievement>
+                </button>
             {/each}
+        </div>
+        <div class="fixed w-[70%] h-[90%] top-[5%] left-[50%] transform translate-x-[-50%] translate-y-[-5%] bg-[#1d2429] border-[2px] border-[#abf1f7] rounded-[20px]" style={iframeVisibility}>
+            <button class="text-[#abf1f7] ml-[95.5%] mt-[0.125%] text-[25px] mplus" onclick={hideIframe}>x</button>
+            <iframe bind:this={iframe} src={iframeSrc} class="select-none w-[100%] h-[92.5%] absolute bottom-0 left-[50%] transform translate-x-[-50%] rounded-b-[20px]" title="freaky"></iframe>
         </div>
     </div>
 
