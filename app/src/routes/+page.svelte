@@ -109,7 +109,6 @@
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
-        <br>
         <div class="box-border p-[30px] text-center" style={defaultScreen}>
             <h1 class="text-white text-[100px]">(ó﹏ò｡)</h1>
             <h3 class="text-white text-[20px]">No folder or file open</h3>

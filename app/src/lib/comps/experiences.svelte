@@ -79,13 +79,15 @@
 
     let fileDirectoryVisibility=$state("display:flex");
     let hackathonVisibility=$state("display:none");
+    let othersVisibility=$state("display:none");
 
-    let iframeVisibility=$state("display:block");
+    let iframeVisibility=$state("display:none");
 
     let iframeSrc=$state("https://tailwindcss.com/docs/top-right-bottom-left");
 
     onMount(()=>{
         hackathons.onclick=showHackathons;
+        others.onclick=showOthers;
     })
 
     export function changeVisible(visible:string){
@@ -94,11 +96,19 @@
     
     function showHackathons(){
         fileDirectoryVisibility="display:none";
+        othersVisibility="display:none";
         hackathonVisibility="display:block";
+    }
+
+    function showOthers(){
+        fileDirectoryVisibility="display:none";
+        othersVisibility="display:block";
+        hackathonVisibility="display:none";
     }
 
     function returnFiles(){
         hackathonVisibility="display:none";
+        othersVisibility="display:none";
         fileDirectoryVisibility="display:flex";
     }
 
@@ -121,8 +131,8 @@
             <h3 class="mplus text-white">Hackathons</h3>
         </div>
         <div class="text-center rounded-[25px] w-[180px] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]" bind:this={others}>
-            <img src={textfile} alt="textfileimage" class="w-[150px] h-[150px] m-auto">
-            <h3 class="mplus text-white">others.md</h3>
+            <img src={textfile} alt="textfileimage" class="w-[125px] h-[125px] mr-auto ml-auto mt-[18px]">
+            <h3 class="mplus text-white mt-[7px]">others.txt</h3>
         </div>
     </div>
 
@@ -139,6 +149,19 @@
         <div class="fixed w-[70%] h-[90%] top-[5%] left-[50%] transform translate-x-[-50%] translate-y-[-5%] bg-[#1d2429] border-[2px] border-[#abf1f7] rounded-[20px]" style={iframeVisibility}>
             <button class="text-[#abf1f7] ml-[95.5%] mt-[0.125%] text-[25px] mplus" onclick={hideIframe}>x</button>
             <iframe bind:this={iframe} src={iframeSrc} class="select-none w-[100%] h-[92.5%] absolute bottom-0 left-[50%] transform translate-x-[-50%] rounded-b-[20px]" title="freaky"></iframe>
+        </div>
+    </div>
+
+    <div style={othersVisibility}>
+        <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+        <h1 class="courier text-center text-white underline text-[25px]">Other</h1>
+        <br>
+        <div class="w-[60%] m-auto">
+            <li class="text-[#fae6f0] mplus text-[18px]">National Latin Honors Society</li>
+            <li class="text-[#fae6f0] mplus text-[18px]">Latin Club member</li>
+            <li class="text-[#fae6f0] mplus text-[18px]">Acapella club member</li>
+            <li class="text-[#fae6f0] mplus text-[18px]">Women in Computer Science member</li>
+            <li class="text-[#fae6f0] mplus text-[18px]">Hack Club member</li>
         </div>
     </div>
 </div>
