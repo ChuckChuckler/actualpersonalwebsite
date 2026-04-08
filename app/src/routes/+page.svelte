@@ -12,6 +12,7 @@
     import Skillsfolder from "$lib/comps/skillsfolder.svelte";
     import Experiences from "$lib/comps/experiences.svelte";
     import Achievements from "$lib/comps/achievements.svelte";
+    import ProjectsFolder from "$lib/comps/projectsFolder.svelte";
 
     let defaultScreen:string=$state("display:block");
 
@@ -32,10 +33,13 @@
     let achievementsFolder:any;
     let achievementsFolderTab:any;
 
+    let projectsFolder:any;
+    let projectsFolderTab:any;
+
     onMount(()=>{
-        let idsForClickers = ["aboutme", "contact", "skillsFolder", "experiencesFolder", "achievementsFolder"];
-        let divsForClickers = [aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder];
-        let tabsForClickers = [aboutmeTab, contactTab, skillsFolderTab, experiencesFolderTab, achievementsFolderTab];
+        let idsForClickers = ["aboutme", "contact", "skillsFolder", "experiencesFolder", "achievementsFolder", "projectsFolder"];
+        let divsForClickers = [aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder];
+        let tabsForClickers = [aboutmeTab, contactTab, skillsFolderTab, experiencesFolderTab, achievementsFolderTab, projectsFolderTab];
         
         for(let i:number=0;i<idsForClickers.length;i++){
             let clicker = document.getElementById(idsForClickers[i])
@@ -78,7 +82,7 @@
             <h1 class="text-[#eca1cf] text-center mplus">☆ avishi's personal website ☆</h1>
         </div>
         <div>
-            <div class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
+            <div id="projectsFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
                 <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
                 <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Projects</h2>
             </div>
@@ -111,6 +115,7 @@
             <Tab bind:this={skillsFolderTab} tabname="skills" xFunc={hideSection} xTarget={skillsFolder} clickFunc={showSection} type="folder"></Tab> 
             <Tab bind:this={experiencesFolderTab} tabname="experiences" xFunc={hideSection} xTarget={experiencesFolder} clickFunc={showSection} type="folder"></Tab> 
             <Tab bind:this={achievementsFolderTab} tabname="achievements" xFunc={hideSection} xTarget={achievementsFolder} clickFunc={showSection} type="folder"></Tab> 
+            <Tab bind:this={projectsFolderTab} tabname="projects" xFunc={hideSection} xTarget={projectsFolder} clickFunc={showSection} type="folder"></Tab> 
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
@@ -123,6 +128,7 @@
         <Skillsfolder bind:this={skillsFolder}></Skillsfolder>
         <Experiences bind:this={experiencesFolder}></Experiences>
         <Achievements bind:this={achievementsFolder}></Achievements>
+        <ProjectsFolder bind:this={projectsFolder}></ProjectsFolder>
     </div>
 </div>
 
