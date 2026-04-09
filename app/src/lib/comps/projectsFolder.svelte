@@ -2,10 +2,13 @@
     import textfile from "$lib/personalwebsite_imgs/text_file.png";
     import { onMount } from "svelte";
 
+    import FeaturedProject from "./featuredProject.svelte";
+
     import apollo from "$lib/personalwebsite_imgs/previews/apolloPreview.png";
     import notmyelement from "$lib/personalwebsite_imgs/previews/notmyelementPreview.png";
     import weissSchwarz from "$lib/personalwebsite_imgs/previews/weissSchwarzSimulator.png";
     import animalBook from "$lib/personalwebsite_imgs/previews/myAnimalBookPhoto1.png";
+    import { ObjectFlags } from "typescript";
 
     let featured:any;
     let others:any;
@@ -14,6 +17,15 @@
 
     let fileDirectoryVisibility=$state("display:flex");
     let featuredVisibility=$state("display:none");
+
+    let featuredIndex:number=0;
+
+    let featured0:any;
+    let featured1:any;
+    let featured2:any;
+    let featured3:any;
+
+    let featuredsArr:any[]=[featured0, featured1, featured2, featured3];
 
     type techstack={
         frontend:string,
@@ -87,7 +99,13 @@
 
     onMount(()=>{
         featured.onclick=showFeatured;
-    })
+        for(let i:number=0; i<Object.keys(featuredProjects).length;i++){
+            let featuredElm=document.getElementById(`featured${i}`);
+            if(featuredElm!=null){
+                featuredsArr.push(featuredElm);
+            }
+        }
+    });
 
     function returnFiles(){
         featuredVisibility="display:none";
@@ -97,6 +115,17 @@
     function showFeatured(){
         featuredVisibility="display:block";
         fileDirectoryVisibility="display:none";
+    }
+
+    function moveForward(){
+        featuredIndex+=1;
+        if(featuredIndex==Object.keys(featuredProjects).length){
+            featuredIndex=0;
+        }
+        
+        for(let i:number=0;i<featuredsArr.length;i++){
+            featuredsArr[i].swap(featuredIndex);
+        }
     }
 </script>
 
@@ -117,29 +146,12 @@
         <h1 class="text-white courier text-center text-[30px]">~Featured Projects~</h1>
         <div>
             {#each Object.keys(featuredProjects) as project}
-            <div class="bg-[#291d23] box-border p-[15px] rounded-[25px] border-[1.5px] border-[#fae6f0]">
-                <h1 class="text-center courier text-[#D9FCFF]">{project}</h1>
-                <br>
-                <div class="flex justify-between w-[100%]">
-                    <img src={featuredProjects[project].img} alt={`${project} preview`} class="w-[32.5vw] h-[25vw] object-cover rounded-[20px] border-[1.5px] border-[#D9FCFF]">
-                    <div class="w-[53%]">
-                        <h3 class="text-[#FCF0F6] mplus">{featuredProjects[project].desc}</h3>
-                        <br>
-                        <h3 class="text-[#FCF0F6] mplus">{featuredProjects[project].completed}</h3>
-                        <br>
-                        <h3 class="text-[#FCF0F6] mplus">{featuredProjects[project].time}</h3>
-                        <br>
-                        <h3 class="text-[#FCF0F6] mplus">Tech Stack:</h3>
-                        <p class="text-[#FCF0F6] mplus indent-[5%]">Frontend: {featuredProjects[project].techStack.frontend}</p>
-                        <p class="text-[#FCF0F6] mplus indent-[5%]">Backend: {featuredProjects[project].techStack.backend}</p>
-                        <br>
-                        <br>
-                        <button class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF]">Repo</button>
-                        <button class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF]">Demo</button>
-                    </div>
-                </div>
-            </div>
+                <FeaturedProject bind:this={featuredsArr[Object.keys(featuredProjects).indexOf(project)]} pName={project} img={featuredProjects[project].img} desc={featuredProjects[project].desc} completed={featuredProjects[project].completed} time={featuredProjects[project].time} frontend={featuredProjects[project].techStack.frontend} backend={featuredProjects[project].techStack.backend} repo={featuredProjects[project].repo} demo={featuredProjects[project].demo} id={`featured${Object.keys(featuredProjects).indexOf(project)}`}></FeaturedProject>
             {/each}
+            <div class="w-[90%] m-auto">
+                <button class="w-[48%] text-white text-[30px] mplus font-black">&lt;&lt;</button>
+                <button class="w-[48%] text-white text-[30px] mplus font-black" onclick={moveForward}>&gt;&gt;</button>
+            </div>
         </div>
     </div>
 </div>
