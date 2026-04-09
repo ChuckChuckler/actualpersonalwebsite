@@ -127,6 +127,17 @@
             featuredsArr[i].swap(featuredIndex);
         }
     }
+
+    function moveBackwards(){
+        featuredIndex-=1;
+        if(featuredIndex==-1){
+            featuredIndex=Object.keys(featuredProjects).length-1;
+        }
+        
+        for(let i:number=0;i<featuredsArr.length;i++){
+            featuredsArr[i].swap(featuredIndex);
+        }
+    }
 </script>
 
 <div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="achivementsFolder" style={visibility}>
@@ -149,7 +160,7 @@
                 <FeaturedProject bind:this={featuredsArr[Object.keys(featuredProjects).indexOf(project)]} pName={project} img={featuredProjects[project].img} desc={featuredProjects[project].desc} completed={featuredProjects[project].completed} time={featuredProjects[project].time} frontend={featuredProjects[project].techStack.frontend} backend={featuredProjects[project].techStack.backend} repo={featuredProjects[project].repo} demo={featuredProjects[project].demo} id={`featured${Object.keys(featuredProjects).indexOf(project)}`}></FeaturedProject>
             {/each}
             <div class="w-[90%] m-auto">
-                <button class="w-[48%] text-white text-[30px] mplus font-black">&lt;&lt;</button>
+                <button class="w-[48%] text-white text-[30px] mplus font-black" onclick={moveBackwards}>&lt;&lt;</button>
                 <button class="w-[48%] text-white text-[30px] mplus font-black" onclick={moveForward}>&gt;&gt;</button>
             </div>
         </div>
