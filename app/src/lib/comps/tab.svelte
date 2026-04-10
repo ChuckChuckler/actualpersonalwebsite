@@ -5,11 +5,11 @@
     import folder from "$lib/personalwebsite_imgs/folder.png";
     import textfile from "$lib/personalwebsite_imgs/text_file.png";
 
-    let {tabname, xFunc, xTarget, clickFunc, type } = $props()
+    let { tabname, xFunc, xTarget, clickFunc, type } = $props()
 
     let iconSrc=$state("");
     
-    let visibility:string=$state("display:none");
+    let visibility:string=$state("display:flex");
     let tabForm:any;
 
     onMount(()=>{
@@ -26,7 +26,7 @@
 
     function deleteTab(){
         visibility="display:none";
-        xFunc(xTarget);
+        xFunc(xTarget, tabname);
     }
 
     export function showTab(){
