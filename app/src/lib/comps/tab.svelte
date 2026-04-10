@@ -37,7 +37,7 @@
 
 <div class="bg-[#3b2932] w-[13vw] rounded-t-[20px] justify-around" style={visibility} bind:this={tabForm}>
     <img src={iconSrc} alt="icon" class="w-[2.2vw] h-[2.2vw] mt-auto mb-auto">
-    <h3 class="text-center text-white mplus">{tabname}</h3>
+    <h3 class="text-center text-white mplus cursor-default">{tabname}</h3>
     <button class="mplus text-white" onclick={deleteTab}>x</button>
 </div>
 
