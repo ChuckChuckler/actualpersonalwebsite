@@ -10,6 +10,10 @@
         }
     });
 
+    function redirect(link:string){
+        window.open(link, "_blank");
+    }
+
     export function swap(elementToChange:string){
         if(id.includes(elementToChange)){
             visibility="display:block";
@@ -36,8 +40,8 @@
             <p class="text-[#FCF0F6] mplus indent-[5%]">Backend: {backend}</p>
             <br>
             <div class="flex justify-around w-[40%] m-auto">
-                <button class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] w-[7.5vw] bg-[#47303E] hover:bg-[#1C1418]">Repo</button>
-                <button class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] w-[7.5vw] bg-[#47303E] hover:bg-[#1C1418]">Demo</button>
+                <button onclick={function(){redirect(repo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] w-[7.5vw] bg-[#47303E] hover:bg-[#1C1418]">Repo</button>
+                <button onclick={function(){redirect(demo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] w-[7.5vw] bg-[#47303E] hover:bg-[#1C1418]">Demo</button>
             </div>
         </div>
     </div>

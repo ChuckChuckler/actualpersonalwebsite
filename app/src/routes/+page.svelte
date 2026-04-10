@@ -109,7 +109,7 @@
         </div>
     </div>
     <div class="w-[80%] overflow-auto scrollbar">
-        <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex">
+        <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex" style="z-index: 10">
             <Tab bind:this={aboutmeTab} tabname="about_me.md" xFunc={hideSection} xTarget={aboutme} clickFunc={showSection} type="text"></Tab>
             <Tab bind:this={contactTab} tabname="contact.md" xFunc={hideSection} xTarget={contact} clickFunc={showSection} type="text"></Tab>
             <Tab bind:this={skillsFolderTab} tabname="skills" xFunc={hideSection} xTarget={skillsFolder} clickFunc={showSection} type="folder"></Tab> 

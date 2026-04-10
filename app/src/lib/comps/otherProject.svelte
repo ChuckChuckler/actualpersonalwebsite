@@ -1,0 +1,36 @@
+<script lang="ts">
+    let { pName, img, desc, repo, demo }=$props();
+
+    function redirect(link:string){
+        window.open(link, "_blank");
+    }
+</script>
+
+<div class="overflow-auto scroll bg-[#291d23] hover:bg-[#1C1418] border-[1.5px] border-[#f6c4dc] box-border p-[15px] rounded-[20px]">
+    <h1 class="courier text-center text-[#D9FCFF]">{pName}</h1>
+    <br>
+    <div class="h-[20vw]">
+        <img src={img} alt={pName} class="object-cover border-[1.5px] border-[#D9FCFF] w-[15vw] h-[15vw] auto rounded-[15px] m-auto">
+        <br>
+        <p class="mplus text-[#fae6f0]">{desc}</p>
+        <br>
+        <div class="flex justify-around w-[90%] m-auto">
+            <button onclick={function(){redirect(repo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] w-[7.5vw] bg-[#47303E] hover:bg-[#3b2633]">Repo</button>
+            <button onclick={function(){redirect(demo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] w-[7.5vw] bg-[#47303E] hover:bg-[#3b2633]">Demo</button>
+        </div>
+        <br>
+    </div>
+</div>
+
+<style>
+    .courier{
+        font-family: "Courier Prime", monospace
+    }
+
+    .mplus{
+        font-family: "M PLUS Rounded 1c", sans-serif;
+    }
+    .scroll{
+        scrollbar-width:none;
+    }
+</style>
