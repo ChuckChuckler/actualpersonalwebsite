@@ -13,7 +13,6 @@
     import Experiences from "$lib/comps/experiences.svelte";
     import Achievements from "$lib/comps/achievements.svelte";
     import ProjectsFolder from "$lib/comps/projectsFolder.svelte";
-    import { ObjectFlags } from "typescript";
 
     let defaultScreen:string=$state("display:block");
 
@@ -39,59 +38,28 @@
     let projectsFolderTab:any;
 
 
-    type tab={
-        xFunc:any,
-        clickFunc:any,
-        type:string
-    }
-
-    let xTargetArr:any[]=[aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder];
+    let xTargetArr:any[]=$state([aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder]);
     let tabsArr:any[]=$state([aboutmeTab, contactTab, skillsFolderTab, experiencesFolderTab, achievementsFolderTab, projectsFolderTab]);
 
-    let allTabs:Record<string,tab>={
-        "about_me.md":{
-            xFunc:hideSection,
-            clickFunc:showSection,
-            type:"text"
-        },
-        "contact.md":{
-            xFunc:hideSection,
-            clickFunc:showSection,
-            type:"text"
-        },
-        "skills":{
-            xFunc:hideSection,
-            clickFunc:showSection,
-            type:"folder"
-        },
-        "experiences":{
-            xFunc:hideSection,
-            clickFunc:showSection,
-            type:"folder"
-        },
-        "achievements":{
-            xFunc:hideSection,
-            clickFunc:showSection,
-            type:"folder"
-        },
-        "projects":{
-            xFunc:hideSection,
-            clickFunc:showSection,
-            type:"folder"
-        }
+    let allTabs:Record<string,string>={
+        "about_me.md":"text",
+        "contact.md":"text",
+        "skills":"folder",
+        "experiences":"folder",
+        "achievements":"folder",
+        "projects":"folder"
     }
 
     onMount(()=>{
         let idsForClickers = ["aboutme", "contact", "skillsFolder", "experiencesFolder", "achievementsFolder", "projectsFolder"];
         let divsForClickers = [aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder];
-        let tabsForClickers = [aboutmeTab, contactTab, skillsFolderTab, experiencesFolderTab, achievementsFolderTab, projectsFolderTab];
         let namesForClickers = ["about_me.md", "contact.md", "skills", "experiences", "achievements", "projects"];
         
         for(let i:number=0;i<idsForClickers.length;i++){
             let clicker = document.getElementById(idsForClickers[i])
             if(clicker!=null){
                 clicker.onclick=function(){
-                    showSection(divsForClickers[i], tabsForClickers[i], namesForClickers[i]);
+                    showSection(divsForClickers[i], namesForClickers[i]);
                 }
             }
         }
@@ -107,16 +75,17 @@
         }
     }
 
-    function showSection(toShow:any, toShowTab:any, toShowName:string){
+    function showSection(toShow:any, toShowName:string){
         defaultScreen="display:none";
         for(let i:number=0;i<visibles.length;i++){
             visibles[i].changeVisible("display:none");
         }
-        toShow.changeVisible("display:block");
-        if(toShowTab!=null){
-            //toShowTab.showTab();
+        if(toShow=="fromButton"){
+            let arr:any[]=[aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder];
+            toShow=arr[Object.keys(allTabs).indexOf(toShowName)];
         }
 
+        toShow.changeVisible("display:block");
         if(!visiblesNames.includes(toShowName)){
             visibles.push(toShow);
             visiblesNames.push(toShowName);
@@ -159,7 +128,7 @@
     <div class="w-[80%] overflow-auto scrollbar">
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex" style="z-index: 10">
             {#each visibles as tab, i}
-                <Tab bind:this={tabsArr[i]} tabname={Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]} xFunc={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]].xFunc} xTarget={xTargetArr[i]} clickFunc={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]].clickFunc} type={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]].type}></Tab>
+                <Tab bind:this={tabsArr[i]} tabname={Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]} xFunc={hideSection} xTarget={xTargetArr[i]} clickFunc={showSection} type={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]]}></Tab>
             {/each}
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
