@@ -23,7 +23,7 @@
     });
 
     function deleteTab(){
-        xFunc(xTarget, tabname);
+        xFunc("fromButton", tabname);
     }
     
 </script>

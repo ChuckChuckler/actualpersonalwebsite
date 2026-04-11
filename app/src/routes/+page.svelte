@@ -66,12 +66,18 @@
     })
 
     export function hideSection(toDelete:any, toDeleteName:string){
+        let arr:any[]=[aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder];
+        if(toDelete=="fromButton"){
+            toDelete=arr[Object.keys(allTabs).indexOf(toDeleteName)];
+        }
         toDelete.changeVisible("display:none");
-        visibles.splice(visibles.indexOf(toDeleteName), 1);
+        let index=visiblesNames.indexOf(toDeleteName);
+        visiblesNames.splice(index,1);
+        visibles.splice(index, 1);
         if(visibles.length==0){
             defaultScreen = "display:block";
         }else{
-            tabsArr[visibles.indexOf([visibles.length-1])].changeVisible("display:block");
+            arr[Object.keys(allTabs).indexOf(visiblesNames[visiblesNames.length-1])].changeVisible("display:block");
         }
     }
 
@@ -128,7 +134,7 @@
     <div class="w-[80%] overflow-auto scrollbar">
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex" style="z-index: 10">
             {#each visibles as tab, i}
-                <Tab bind:this={tabsArr[i]} tabname={Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]} xFunc={hideSection} xTarget={xTargetArr[i]} clickFunc={showSection} type={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]]}></Tab>
+                <Tab tabname={Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]} xFunc={hideSection} xTarget={xTargetArr[i]} clickFunc={showSection} type={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]]}></Tab>
             {/each}
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
