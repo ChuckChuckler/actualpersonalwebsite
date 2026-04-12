@@ -8,12 +8,15 @@
     let { tabname, xFunc, xTarget, clickFunc, type } = $props()
 
     let iconSrc=$state("");
+
+    let bgColor=$state("background-color:#3b2932");
     
     let tabForm:any;
 
     onMount(()=>{
         tabForm.onclick=function(){
             clickFunc("fromButton",tabname);
+            changeBgColor(true);
         }
         if(type=="text"){
             iconSrc=textfile;
@@ -22,13 +25,21 @@
         }
     });
 
+    export function changeBgColor(selected:boolean){
+        if(selected){
+            bgColor="background-color:#3b2932";
+        }else{
+            bgColor="background-color:#2B1D25";
+        }
+    }
+
     function deleteTab(){
         xFunc("fromButton", tabname);
     }
     
 </script>
 
-<div class="bg-[#3b2932] w-[13vw] rounded-t-[20px] justify-around flex" bind:this={tabForm}>
+<div class="w-[13vw] rounded-t-[20px] justify-around flex" bind:this={tabForm} style={bgColor}>
     <img src={iconSrc} alt="icon" class="w-[2.2vw] h-[2.2vw] mt-auto mb-auto">
     <h3 class="text-center text-white mplus cursor-default">{tabname}</h3>
     <button class="mplus text-white" onclick={deleteTab}>x</button>

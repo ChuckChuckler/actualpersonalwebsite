@@ -5,7 +5,7 @@
     import folder_opened from "$lib/personalwebsite_imgs/folder_opened.png"
     import text_file from "$lib/personalwebsite_imgs/text_file.png"
 
-    import Tab from "$lib/comps/tab.svelte";
+    import Tab from "$lib/comps/Tab.svelte";
 
     import Aboutme from "$lib/comps/aboutme.svelte";
     import Contact from "$lib/comps/contact.svelte";
@@ -19,27 +19,19 @@
     let visibles:any[] = $state([]);
     let visiblesNames:string[]=$state([]);
 
+    let lastSelected:string="";
+    let currentSelected:string="";
+
     let aboutme:any;
-    let aboutmeTab:any;
-
     let contact:any;
-    let contactTab:any;
-
     let skillsFolder:any;
-    let skillsFolderTab:any;
-
     let experiencesFolder:any;
-    let experiencesFolderTab:any;
-
     let achievementsFolder:any;
-    let achievementsFolderTab:any;
-
     let projectsFolder:any;
-    let projectsFolderTab:any;
 
 
     let xTargetArr:any[]=$state([aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder]);
-    let tabsArr:any[]=$state([aboutmeTab, contactTab, skillsFolderTab, experiencesFolderTab, achievementsFolderTab, projectsFolderTab]);
+    let tabsArr:any[]=$state([]);
 
     let allTabs:Record<string,string>={
         "about_me.md":"text",
@@ -74,10 +66,16 @@
         let index=visiblesNames.indexOf(toDeleteName);
         visiblesNames.splice(index,1);
         visibles.splice(index, 1);
-        if(visibles.length==0){
-            defaultScreen = "display:block";
+        if(visiblesNames.indexOf(lastSelected)==-1){
+            if(visibles.length==0){
+                defaultScreen = "display:block";
+            }else{
+                arr[Object.keys(allTabs).indexOf(visiblesNames[visiblesNames.length-1])].changeVisible("display:block");
+                tabsArr[visiblesNames.length-1].changeBgColor(true);
+            }
         }else{
-            arr[Object.keys(allTabs).indexOf(visiblesNames[visiblesNames.length-1])].changeVisible("display:block");
+            arr[Object.keys(allTabs).indexOf(visiblesNames[visiblesNames.indexOf(lastSelected)])].changeVisible("display:block");
+            tabsArr[visiblesNames.indexOf(lastSelected)].changeBgColor(true);
         }
     }
 
@@ -85,6 +83,7 @@
         defaultScreen="display:none";
         for(let i:number=0;i<visibles.length;i++){
             visibles[i].changeVisible("display:none");
+            tabsArr[i].changeBgColor(false);
         }
         if(toShow=="fromButton"){
             let arr:any[]=[aboutme, contact, skillsFolder, experiencesFolder, achievementsFolder, projectsFolder];
@@ -96,6 +95,8 @@
             visibles.push(toShow);
             visiblesNames.push(toShowName);
         }
+        lastSelected=currentSelected;
+        currentSelected=toShowName;
     }
 </script>
 
@@ -133,8 +134,8 @@
     </div>
     <div class="w-[80%] overflow-auto scrollbar">
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex" style="z-index: 10">
-            {#each visibles as tab, i}
-                <Tab tabname={Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]} xFunc={hideSection} xTarget={xTargetArr[i]} clickFunc={showSection} type={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]]}></Tab>
+            {#each visibles as tabElm, i}
+                <Tab bind:this={tabsArr[i]} tabname={Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]} xFunc={hideSection} xTarget={xTargetArr[i]} clickFunc={showSection} type={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]]}></Tab>
             {/each}
         </div>
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
