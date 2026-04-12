@@ -131,15 +131,15 @@
             <h3 class="mplus text-white text-[1.3vw]">Hackathons</h3>
         </div>
         <div class="text-center rounded-[25px] w-[15vw] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]" bind:this={others}>
-            <img src={textfile} alt="textfileimage" class="w-[11vw] h-[11vw] mr-auto ml-auto mt-[18px]">
+            <img src={textfile} alt="textfileimage" class="md:w-[11vw] md:h-[11vw] h-[9vw] w-[9w] mr-auto ml-auto mt-[18px]">
             <h3 class="mplus text-white text-[1.3vw] mt-[7px]">others.txt</h3>
         </div>
     </div>
 
     <div style={hackathonVisibility} class="relative">
-        <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+        <button onclick={returnFiles} class="text-white courier md:text-[1.2vw] text-[1.6vw]">&lt;&lt; back</button>
         <br>
-        <div class="grid grid-cols-4">
+        <div class="grid grid-cols-3 md:grid-cols-4">
             {#each Object.keys(hackathonsList) as hackathon}
                 <button onclick={function(){updateIframe(hackathonsList[hackathon].link)}}>
                     <HackathonIcon iconImage={hackathonsList[hackathon].image} iconName={hackathon}></HackathonIcon>
@@ -153,7 +153,7 @@
     </div>
 
     <div style={othersVisibility}>
-        <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+        <button onclick={returnFiles} class="text-white courier md:text-[1.2vw] text-[1.6vw]">&lt;&lt; back</button>
         <h1 class="courier text-center text-white underline text-[25px]">Other</h1>
         <br>
         <div class="w-[60%] m-auto">

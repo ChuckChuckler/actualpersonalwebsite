@@ -136,7 +136,7 @@
         </div>
     </div>
     <div class="w-[80%] overflow-auto scrollbar">
-        <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex" style="z-index: 10">
+        <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh] fixed flex">
             {#each visibles as tabElm, i}
                 <Tab bind:this={tabsArr[i]} tabname={Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]} xFunc={hideSection} xTarget={xTargetArr[i]} clickFunc={showSection} type={allTabs[Object.keys(allTabs)[Object.keys(allTabs).indexOf(visiblesNames[i])]]}></Tab>
             {/each}

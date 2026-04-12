@@ -336,9 +336,9 @@
     </div>
 
     <div style={featuredVisibility}>
-        <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+        <button onclick={returnFiles} class="text-white courier text-[1.2vw]">&lt;&lt; back</button>
         <br>
-        <h1 class="text-white courier text-center text-[30px]">~Featured Projects~</h1>
+        <h1 class="text-white courier text-center text-[2vw]">~Featured Projects~</h1>
         <div>
             {#each Object.keys(featuredProjects) as project}
                 <FeaturedProject bind:this={featuredsArr[Object.keys(featuredProjects).indexOf(project)]} pName={project} img={featuredProjects[project].img} desc={featuredProjects[project].desc} completed={featuredProjects[project].completed} time={featuredProjects[project].time} frontend={featuredProjects[project].techStack.frontend} backend={featuredProjects[project].techStack.backend} repo={featuredProjects[project].repo} demo={featuredProjects[project].demo} id={`featured${Object.keys(featuredProjects).indexOf(project)}`}></FeaturedProject>
@@ -351,9 +351,9 @@
     </div>
     
     <div style={othersVisibility}>
-        <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+        <button onclick={returnFiles} class="text-white courier text-[1.2vw]">&lt;&lt; back</button>
         <br>
-        <h1 class="text-white courier text-center text-[30px]">~Other Projects~</h1>
+        <h1 class="text-white courier text-center text-[2vw]">~Other Projects~</h1>
         <br>
         <div class="grid sm:grid-cols-3 grid-cols-2 gap-[15px]">
             {#each Object.keys(otherProjects) as project}
