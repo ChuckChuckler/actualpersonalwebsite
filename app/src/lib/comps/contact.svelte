@@ -21,22 +21,22 @@
 </script>
 
 <div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="contact" style={visibility}>
-    <h1 class="text-[white] text-center text-[30px] courier">⟡ Contact ⟡</h1>
+    <h1 class="text-[white] text-center text-[2.5vw] courier">⟡ Contact ⟡</h1>
     <hr class="border-[#cdf6fa] border-[1px] w-[40%] m-auto shadow-[0px_0px_5px_transparent]">
     <br>
-    <div class="grid grid-rows-2 gap-[30px] w-[65%] m-auto bg-[#291d23] box-border p-[20px] rounded-[15px] border-[1.5px] border-[#fae6f0]">
+    <div class="grid grid-rows-2 gap-[30px] w-[65%] h-[30vw] m-auto bg-[#291d23] box-border p-[20px] rounded-[15px] border-[1.5px] border-[#fae6f0]">
         <div class="flex justify-around w-[50%] bg-[#291d23]">
-            <img src={github} alt="github icon" class="w-[125px]">
+            <img src={github} alt="github icon" class="w-[10vw] h-[10vw] mt-auto mb-auto ml-[2vw]">
             <div class="m-auto pl-[20px]">
-                <h3 class="cursor-default text-[#fae6f0] mplus block mt-auto mb-auto">Github</h3>
-                <h1 bind:this={githubLink} class="cursor-pointer courier text-[#fae6f0] text-[30px] block mt-auto mb-auto hover:underline">ChuckChuckler</h1>
+                <h3 class="text-[1.5vw] cursor-default text-[#fae6f0] mplus block mt-auto mb-auto">Github</h3>
+                <h1 bind:this={githubLink} class="text-[2.2vw] cursor-pointer courier text-[#fae6f0] block mt-auto mb-auto hover:underline">ChuckChuckler</h1>
             </div>
         </div>
         <div class="flex justify-around w-[70%] bg-[#291d23]">
-            <img src={email} alt="email icon" class="w-[125px]">
+            <img src={email} alt="email icon" class="w-[10vw] h-[10vw] mt-auto mb-auto ml-[2vw]">
             <div class="m-auto pl-[20px]">
-                <h3 class="cursor-default text-[#fae6f0] mplus block mt-auto mb-auto">Email</h3>
-                <h1 class="courier text-[#fae6f0] text-[30px] block mt-auto mb-auto">avishi39sharma@gmail.com</h1>
+                <h3 class="text-[1.5vw] cursor-default text-[#fae6f0] mplus block mt-auto mb-auto">Email</h3>
+                <h1 class="text-[2.2vw] courier text-[#fae6f0] block mt-auto mb-auto">avishi39sharma@gmail.com</h1>
             </div>
         </div>
     </div>
