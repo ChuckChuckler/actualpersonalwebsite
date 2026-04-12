@@ -16,7 +16,6 @@
     onMount(()=>{
         tabForm.onclick=function(){
             clickFunc("fromButton",tabname);
-            changeBgColor(true);
         }
         if(type=="text"){
             iconSrc=textfile;

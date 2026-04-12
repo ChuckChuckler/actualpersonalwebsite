@@ -95,6 +95,9 @@
             visibles.push(toShow);
             visiblesNames.push(toShowName);
         }
+
+        tabsArr[visiblesNames.indexOf(toShowName)].changeBgColor(true);
+
         lastSelected=currentSelected;
         currentSelected=toShowName;
     }
