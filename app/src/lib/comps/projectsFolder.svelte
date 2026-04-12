@@ -355,7 +355,7 @@
         <br>
         <h1 class="text-white courier text-center text-[30px]">~Other Projects~</h1>
         <br>
-        <div class="grid grid-cols-3 gap-[15px]">
+        <div class="grid sm:grid-cols-3 grid-cols-2 gap-[15px]">
             {#each Object.keys(otherProjects) as project}
                 <OtherProject pName={project} img={otherProjects[project].preview} desc={otherProjects[project].desc} repo={otherProjects[project].repo} demo={otherProjects[project].demo}></OtherProject>
             {/each}
