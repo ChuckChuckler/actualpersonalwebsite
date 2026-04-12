@@ -39,9 +39,9 @@
 </script>
 
 <div class="w-[13vw] rounded-t-[20px] justify-around flex" bind:this={tabForm} style={bgColor}>
-    <img src={iconSrc} alt="icon" class="w-[2.2vw] h-[2.2vw] mt-auto mb-auto">
-    <h3 class="text-center text-white mplus cursor-default">{tabname}</h3>
-    <button class="mplus text-white" onclick={deleteTab}>x</button>
+    <img src={iconSrc} alt="icon" class="w-[3vw] h-[3vw] mt-auto mb-auto">
+    <h3 class="text-center text-white mplus cursor-default text-[1.2vw]">{tabname}</h3>
+    <button class="mplus text-white text-[1.5vw]" onclick={deleteTab}>x</button>
 </div>
 
 <style>

@@ -148,14 +148,14 @@
 </script>
 
 <div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="achivementsFolder" style={visibility}>
-    <div class="justify-between w-[40%] flex" style={fileDirectoryVisibility}>
-        <div bind:this={coding} class="text-center rounded-[25px] w-[180px] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]">
-            <img src={textfile} alt="textfileimage" class="w-[125px] h-[125px] mr-auto ml-auto mt-[18px]">
-            <h3 class="mplus text-white mt-[7px]">coding.md</h3>
+    <div class="justify-between w-[42%] flex" style={fileDirectoryVisibility}>
+        <div bind:this={coding} class="text-center rounded-[25px] w-[15vw] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]">
+            <img src={textfile} alt="textfileimage" class="w-[11vw] h-[11vw] mr-auto ml-auto mt-[18px]">
+            <h3 class="mplus text-white text-[1.3vw] mt-[7px]">coding.md</h3>
         </div>
-        <div bind:this={others} class="text-center rounded-[25px] w-[180px] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]">
-            <img src={textfile} alt="textfileimage" class="w-[125px] h-[125px] mr-auto ml-auto mt-[18px]">
-            <h3 class="mplus text-white mt-[7px]">other.md</h3>
+        <div bind:this={others} class="text-center rounded-[25px] w-[15vw] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]">
+            <img src={textfile} alt="textfileimage" class="w-[11vw] h-[11vw] mr-auto ml-auto mt-[18px]">
+            <h3 class="mplus text-white text-[1.3vw] mt-[7px]">other.md</h3>
         </div>
     </div>
     

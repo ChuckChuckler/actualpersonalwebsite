@@ -106,32 +106,32 @@
 <div class="flex justify-around w-[100%] h-[100vh] bg-[#49343fff] ">
     <div class="w-[20%] bg-[#2a1d24ff] border-r-[2px] border-[#f6c4dc]">
         <div class="bg-[#160e12ff] w-[100%] h-[8vh] leading-[8vh]">
-            <h1 class="text-[#eca1cf] text-center mplus">☆ avishi's personal website ☆</h1>
+            <h1 class="text-[#eca1cf] text-center mplus text-[1.2vw]">☆ avishi's personal website ☆</h1>
         </div>
         <div>
             <div id="projectsFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
-                <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
-                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Projects</h2>
+                <img src={folder} alt="folder" class="w-[5.5vw] pr-[10px]">
+                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier text-[1.3vw]">Projects</h2>
             </div>
             <div id="experiencesFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
-                <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
-                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Experiences</h2>
+                <img src={folder} alt="folder" class="w-[5.5vw] pr-[10px]">
+                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier text-[1.3vw]">Experiences</h2>
             </div>
             <div id="skillsFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
-                <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
-                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Skills</h2>
+                <img src={folder} alt="folder" class="w-[5.5vw] pr-[10px]">
+                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier text-[1.3vw]">Skills</h2>
             </div>
             <div id="achievementsFolder" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
-                <img src={folder} alt="folder" class="w-[70px] pr-[10px]">
-                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">Achievements</h2>
+                <img src={folder} alt="folder" class="w-[5.5vw] pr-[10px]">
+                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier text-[1.3vw]">Achievements</h2>
             </div>
             <div id="aboutme" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
-                <img src={text_file} alt="textfile" class="w-[70px] pr-[10px]">
-                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">about_me.md</h2>
+                <img src={text_file} alt="textfile" class="w-[5.5vw] pr-[10px]">
+                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier text-[1.3vw]">about_me.md</h2>
             </div>
             <div id="contact" class="flex justify-start box-border p-[10px] bg-[#2a1d24ff] hover:bg-[#21151b]">
-                <img src={text_file} alt="textfile" class="w-[70px] pr-[10px]">
-                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier">contact.md</h2>
+                <img src={text_file} alt="textfile" class="w-[5.5vw] pr-[10px]">
+                <h2 class="text-[#fae6f0] block mt-auto mb-auto courier text-[1.3vw]">contact.md</h2>
             </div>
         </div>
     </div>
@@ -144,8 +144,8 @@
         <div class="bg-[#89697aff] w-[100%] h-[8vh] leading-[8vh]">
         </div>
         <div class="box-border p-[30px] text-center" style={defaultScreen}>
-            <h1 class="text-white text-[100px]">(ó﹏ò｡)</h1>
-            <h3 class="text-white text-[20px]">No folder or file open</h3>
+            <h1 class="text-white text-[10vw]">(ó﹏ò｡)</h1>
+            <h3 class="text-white text-[1.8vw]">No folder or file open</h3>
         </div>
         <Aboutme bind:this={aboutme}></Aboutme>
         <Contact bind:this={contact}></Contact>

@@ -85,14 +85,14 @@
 </script>
 
 <div class="w-[100%] h-[92vh] box-border p-[15px] bg-[#49343fff]" id="skillsFolder" style={visibility}>
-    <div class="flex justify-between w-[40%]" style={fileDirectoryVisibility}>
-        <div class="text-center rounded-[25px] w-[180px] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]" bind:this={skills}>
-            <img src={folder} alt="folderimage" class="w-[150px] h-[150px] m-auto">
-            <h3 class="mplus text-white">Languages</h3>
+    <div class="flex justify-between w-[42%]" style={fileDirectoryVisibility}>
+        <div class="text-center rounded-[25px] w-[15vw] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]" bind:this={skills}>
+            <img src={folder} alt="folderimage" class="w-[13vw] h-[13vw] m-auto">
+            <h3 class="mplus text-[1.3vw] text-white">Languages</h3>
         </div>
-        <div class="text-center rounded-[25px] w-[180px] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]" bind:this={frameworks}>
-            <img src={folder} alt="folderimage" class="w-[150px] h-[150px] m-auto">
-            <h3 class="mplus text-white">Frameworks/Tools</h3>
+        <div class="text-center rounded-[25px] w-[15vw] box-border p-[10px] bg-[#49343f] hover:bg-[#614654]" bind:this={frameworks}>
+            <img src={folder} alt="folderimage" class="w-[13vw] h-[13vw] m-auto">
+            <h3 class="mplus text-[1.3vw] text-white">Frameworks/Tools</h3>
         </div>
     </div>
 
