@@ -29,7 +29,7 @@
     <br>
     <div class="flex justify-between">
         <div class="border-[2px] border-[#ec89c6] rounded-[12px] w-[50%]">
-            <iframe title="favorite songs" data-testid="embed-iframe" class="rounded-[12px] h-[30vw]" src="https://open.spotify.com/embed/playlist/6Z99HBqeMAzgWFBwcuUikk?utm_source=generator&theme=0" width="100%" frameBorder="0" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe title="favorite songs" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6Z99HBqeMAzgWFBwcuUikk?utm_source=generator&theme=0" width="100%" height="352" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div class="w-[48%]">
             <h3 class="text-center text-[1.5vw]">⭐🎈🔁❌</h3>
