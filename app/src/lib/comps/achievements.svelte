@@ -3,6 +3,9 @@
     import textfile from "$lib/personalwebsite_imgs/text_file.png";
     import { onMount } from "svelte";
 
+    import backCursor from "$lib/mikuCursors/Alternate.cur";
+    import clickerCursor from "$lib/mikuCursors/Link.cur";
+
     import Achievement from "./achievement.svelte";
 
     import athenaAward from "$lib/personalwebsite_imgs/hackathons_ysws/athenaward.svg";
@@ -160,7 +163,7 @@
     </div>
     
     <div style={codingAchievementsVisibility}>
-        <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+        <button style={`cursor:url(${backCursor}),auto`} onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
         <h1 class="courier text-white text-center">Coding Achievements</h1>
         <br>
         <div class="grid grid-cols-2 gap-[15px]">
@@ -170,23 +173,23 @@
                         updateIframe(codingAchievements[achievement].link);
                     }
                 }}>
-                    <Achievement img={codingAchievements[achievement].img} achievementName={achievement} placement={codingAchievements[achievement].placement} year={codingAchievements[achievement].year}></Achievement>
+                    <Achievement isHackathon={true} img={codingAchievements[achievement].img} achievementName={achievement} placement={codingAchievements[achievement].placement} year={codingAchievements[achievement].year}></Achievement>
                 </button>
             {/each}
         </div>
         <div class="fixed w-[70%] h-[90%] top-[5%] left-[50%] transform translate-x-[-50%] translate-y-[-5%] bg-[#1d2429] border-[2px] border-[#abf1f7] rounded-[20px]" style={iframeVisibility}>
-            <button class="text-[#abf1f7] ml-[95.5%] mt-[0.125%] text-[25px] mplus" onclick={hideIframe}>x</button>
+            <button style={`cursor:url(${clickerCursor}),auto`} class="text-[#abf1f7] ml-[95.5%] mt-[0.125%] text-[25px] mplus" onclick={hideIframe}>x</button>
             <iframe bind:this={iframe} src={iframeSrc} class="select-none w-[100%] h-[92.5%] absolute bottom-0 left-[50%] transform translate-x-[-50%] rounded-b-[20px]" title="freaky"></iframe>
         </div>
     </div>
 
     <div style={otherAchievementsVisibility}>
-        <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+        <button style={`cursor:url(${backCursor}),auto`} onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
         <h1 class="courier text-white text-center">Other Achievements</h1>
         <br>
         <div class="grid grid-cols-2 gap-[15px]">
             {#each Object.keys(otherAchievements) as achievement}
-                <Achievement img={otherAchievements[achievement].img} achievementName={achievement} placement={otherAchievements[achievement].placement} year={otherAchievements[achievement].year}></Achievement>
+                <Achievement img={otherAchievements[achievement].img} achievementName={achievement} placement={otherAchievements[achievement].placement} year={otherAchievements[achievement].year} isHackathon={false}></Achievement>
             {/each}
         </div>
     </div>

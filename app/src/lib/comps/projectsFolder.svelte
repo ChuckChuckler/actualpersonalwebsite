@@ -2,6 +2,9 @@
     import textfile from "$lib/personalwebsite_imgs/text_file.png";
     import { onMount } from "svelte";
 
+    import clickerCursor from "$lib/mikuCursors/Link.cur";
+    import backCursor from "$lib/mikuCursors/Alternate.cur";
+
     import FeaturedProject from "./featuredProject.svelte";
     import OtherProject from "./otherProject.svelte";
 
@@ -336,7 +339,7 @@
     </div>
 
     <div style={featuredVisibility}>
-        <button onclick={returnFiles} class="text-white courier text-[1.2vw]">&lt;&lt; back</button>
+        <button onclick={returnFiles} style={`cursor:url(${backCursor}),auto`} class="text-white courier text-[1.2vw]">&lt;&lt; back</button>
         <br>
         <h1 class="text-white courier text-center text-[2vw]">~Featured Projects~</h1>
         <div>
@@ -344,14 +347,14 @@
                 <FeaturedProject bind:this={featuredsArr[Object.keys(featuredProjects).indexOf(project)]} pName={project} img={featuredProjects[project].img} desc={featuredProjects[project].desc} completed={featuredProjects[project].completed} time={featuredProjects[project].time} frontend={featuredProjects[project].techStack.frontend} backend={featuredProjects[project].techStack.backend} repo={featuredProjects[project].repo} demo={featuredProjects[project].demo} id={`featured${Object.keys(featuredProjects).indexOf(project)}`}></FeaturedProject>
             {/each}
             <div class="w-[90%] m-auto">
-                <button class="w-[48%] text-white text-[30px] mplus font-black" onclick={moveBackwards}>&lt;&lt;</button>
-                <button class="w-[48%] text-white text-[30px] mplus font-black" onclick={moveForward}>&gt;&gt;</button>
+                <button style={`cursor:url(${clickerCursor}),auto`} class="w-[48%] text-white text-[30px] mplus font-black" onclick={moveBackwards}>&lt;&lt;</button>
+                <button style={`cursor:url(${clickerCursor}),auto`} class="w-[48%] text-white text-[30px] mplus font-black" onclick={moveForward}>&gt;&gt;</button>
             </div>
         </div>
     </div>
     
     <div style={othersVisibility}>
-        <button onclick={returnFiles} class="text-white courier text-[1.2vw]">&lt;&lt; back</button>
+        <button onclick={returnFiles} style={`cursor:url(${backCursor}),auto`} class="text-white courier text-[1.2vw]">&lt;&lt; back</button>
         <br>
         <h1 class="text-white courier text-center text-[2vw]">~Other Projects~</h1>
         <br>

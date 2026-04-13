@@ -3,6 +3,10 @@
     import textfile from "$lib/personalwebsite_imgs/text_file.png";
     import { onMount } from "svelte";
 
+    import defaultCursor from "$lib/mikuCursors/Normal.cur";
+    import clickerCursor from "$lib/mikuCursors/Link.cur";
+    import backCursor from "$lib/mikuCursors/Alternate.cur";
+
     import HackathonIcon from "./hackathonIcon.svelte";
 
     import bp24 from "$lib/personalwebsite_imgs/hackathons_ysws/bp2024.svg";
@@ -137,7 +141,7 @@
     </div>
 
     <div style={hackathonVisibility} class="relative">
-        <button onclick={returnFiles} class="text-white courier md:text-[1.2vw] text-[1.6vw]">&lt;&lt; back</button>
+        <button style={`cursor:url(${backCursor}),auto`} onclick={returnFiles} class="text-white courier md:text-[1.2vw] text-[1.6vw]">&lt;&lt; back</button>
         <br>
         <div class="grid grid-cols-3 md:grid-cols-4">
             {#each Object.keys(hackathonsList) as hackathon}
@@ -147,13 +151,13 @@
             {/each}
         </div>
         <div class="fixed w-[70%] h-[90%] top-[5%] left-[50%] transform translate-x-[-50%] translate-y-[-5%] bg-[#1d2429] border-[2px] border-[#abf1f7] rounded-[20px]" style={iframeVisibility}>
-            <button class="text-[#abf1f7] ml-[95.5%] mt-[0.125%] text-[25px] mplus" onclick={hideIframe}>x</button>
+            <button class="text-[#abf1f7] ml-[95.5%] mt-[0.125%] text-[25px] mplus" style={`cursor:url(${clickerCursor}),auto`} onclick={hideIframe}>x</button>
             <iframe bind:this={iframe} src={iframeSrc} class="select-none w-[100%] h-[92.5%] absolute bottom-0 left-[50%] transform translate-x-[-50%] rounded-b-[20px]" title="freaky"></iframe>
         </div>
     </div>
 
     <div style={othersVisibility}>
-        <button onclick={returnFiles} class="text-white courier md:text-[1.2vw] text-[1.6vw]">&lt;&lt; back</button>
+        <button style={`cursor:url(${backCursor}),auto`} onclick={returnFiles} class="text-white courier md:text-[1.2vw] text-[1.6vw]">&lt;&lt; back</button>
         <h1 class="courier text-center text-white underline text-[25px]">Other</h1>
         <br>
         <div class="w-[60%] m-auto">

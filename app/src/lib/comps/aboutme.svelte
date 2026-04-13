@@ -1,4 +1,7 @@
 <script lang="ts">
+    import mikuyay from "$lib/personalwebsite_imgs/miku2.jpg";
+    import futureEve from "$lib/personalwebsite_imgs/futureEve.png";
+    
     let visibility:string = $state("display:none");
 
     export function changeVisible(visible:string){
@@ -12,7 +15,7 @@
     <br>
     <!--[#abf1f7]-->
     <div class="flex w-[90%] justify-around m-auto p-[15px]">
-        <img class="w-[15vw] h-[15vw] rounded-full m-auto" src="https://img.spoonflower.com/c/11944215/p/f/m/a3oLNXHeS8aDuCgBdpbOC_MQqZY4x0873vwjHuO3UISqbKFNJLp1/Aqua%20Solid.jpg" alt="placeholder">
+        <img class="w-[15vw] h-[15vw] rounded-full m-auto border-[1.5px] border-[#cdf6fa]" src={mikuyay} alt="placeholder">
         <div class="w-[70%]">
             <p class="text-[#fae6f0] mplus text-[1.3vw]">I’m a 16 y.o programmer from the US.</p>
             <br>
@@ -39,6 +42,19 @@
             <p class="text-[#fae6f0] mplus text-[1.3vw]">➼ ben? yes? no. hohoho</p>
         </div>
     </div>
+    <br>
+    <hr>
+    <br>
+    <div class="flex justify-around">
+        <img class="w-[49%]" src="https://github-readme-stats.hackclub.dev/api/wakatime?username=2598&api_domain=hackatime.hackclub.com&theme=rose_pine&custom_title=Hackatime+Stats&cache_seconds=0&langs_count=5" alt="hackatime stats">
+        <img class="w-[49%] object-cover h-[14.8vw] rounded-[5px] border-[1.5px] border-[#fae6f0]" src={futureEve} alt="future eve by hit music artist sasakure.uk">
+    </div>
+    <br>
+    <div class="bg-black w-[100%] box-border p-[10px] rounded-[15px] m-auto border-[1.5px] border-[#fae6f0]">
+        <img class="m-auto w-[100%]" alt="Hackatime activity heatmap" src="https://heatmap.shymike.dev?id=2598&timezone=America%2FNew_York&labels=true&year=current&theme=dark">
+    </div>
+    <br>
+    <p class="text-[1vw] courier text-[#fae6f0] text-center">This website was made with Svelte, Typescript, and Tailwind</p>
     <br>
     <hr>
     <br>

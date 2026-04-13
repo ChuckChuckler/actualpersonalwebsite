@@ -3,6 +3,9 @@
     import email from "$lib/personalwebsite_imgs/email.png";
     import { onMount } from "svelte";
 
+    import defaultCursor from "$lib/mikuCursors/Normal.cur";
+    import clickerCursor from "$lib/mikuCursors/Link.cur";
+
     let githubLink:any;
 
     onMount(()=>{
@@ -28,14 +31,14 @@
         <div class="flex justify-around w-[50%] bg-[#291d23]">
             <img src={github} alt="github icon" class="w-[10vw] h-[10vw] mt-auto mb-auto ml-[2vw]">
             <div class="m-auto pl-[20px]">
-                <h3 class="text-[1.5vw] cursor-default text-[#fae6f0] mplus block mt-auto mb-auto">Github</h3>
-                <h1 bind:this={githubLink} class="text-[2.2vw] cursor-pointer courier text-[#fae6f0] block mt-auto mb-auto hover:underline">ChuckChuckler</h1>
+                <h3 class="text-[1.5vw] text-[#fae6f0] mplus block mt-auto mb-auto" style={`cursor:url(${defaultCursor}),auto`}>Github</h3>
+                <h1 bind:this={githubLink} class="text-[2.2vw] courier text-[#fae6f0] block mt-auto mb-auto hover:underline" style={`cursor:url(${clickerCursor}),auto`}>ChuckChuckler</h1>
             </div>
         </div>
         <div class="flex justify-around w-[70%] bg-[#291d23]">
             <img src={email} alt="email icon" class="w-[10vw] h-[10vw] mt-auto mb-auto ml-[2vw]">
             <div class="m-auto pl-[20px]">
-                <h3 class="text-[1.5vw] cursor-default text-[#fae6f0] mplus block mt-auto mb-auto">Email</h3>
+                <h3 class="text-[1.5vw] text-[#fae6f0] mplus block mt-auto mb-auto" style={`cursor:url(${defaultCursor}),auto`}>Email</h3>
                 <h1 class="text-[2.2vw] courier text-[#fae6f0] block mt-auto mb-auto">avishi39sharma@gmail.com</h1>
             </div>
         </div>

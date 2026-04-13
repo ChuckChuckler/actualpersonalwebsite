@@ -14,6 +14,8 @@
     import Achievements from "$lib/comps/achievements.svelte";
     import ProjectsFolder from "$lib/comps/projectsFolder.svelte";
 
+    import defaultCursor from "$lib/mikuCursors/Normal.cur";
+
     let defaultScreen:string=$state("display:block");
 
     let visibles:any[] = $state([]);
@@ -103,7 +105,7 @@
     }
 </script>
 
-<div class="flex justify-around w-[100%] h-[100vh] bg-[#49343fff] ">
+<div class="flex justify-around w-[100%] h-[100vh] bg-[#49343fff]" style={`cursor:url(${defaultCursor}),auto`}>
     <div class="w-[20%] bg-[#2a1d24ff] border-r-[2px] border-[#f6c4dc]">
         <div class="bg-[#160e12ff] w-[100%] h-[8vh] leading-[8vh]">
             <h1 class="text-[#eca1cf] text-center mplus text-[1.2vw]">☆ avishi's personal website ☆</h1>

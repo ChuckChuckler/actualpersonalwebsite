@@ -1,6 +1,8 @@
 <script lang="ts">
     let { pName, img, desc, repo, demo }=$props();
 
+    import clickerCursor from "$lib/mikuCursors/Link.cur";
+
     function redirect(link:string){
         window.open(link, "_blank");
     }
@@ -15,8 +17,8 @@
         <p class="mplus text-[#fae6f0]">{desc}</p>
         <br>
         <div class="flex justify-between sm:w-[100%] m-auto">
-            <button onclick={function(){redirect(repo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] w-[14vw] rounded-[15px] h-[40px] bg-[#47303E] hover:bg-[#3b2633]">Repo</button>
-            <button onclick={function(){redirect(demo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] w-[14vw] rounded-[15px] h-[40px] bg-[#47303E] hover:bg-[#3b2633]">Demo</button>
+            <button style={`cursor:url(${clickerCursor}),auto`} onclick={function(){redirect(repo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] w-[14vw] rounded-[15px] h-[40px] bg-[#47303E] hover:bg-[#3b2633]">Repo</button>
+            <button style={`cursor:url(${clickerCursor}),auto`} onclick={function(){redirect(demo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] w-[14vw] rounded-[15px] h-[40px] bg-[#47303E] hover:bg-[#3b2633]">Demo</button>
         </div>
         <br>
     </div>

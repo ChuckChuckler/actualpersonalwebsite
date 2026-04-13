@@ -1,6 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
+    import clickerCursor from "$lib/mikuCursors/Link.cur";
+
     let {pName, img, desc, completed, time, frontend, backend, repo, demo, id} = $props();
     let visibility = $state("display:none");
 
@@ -41,8 +43,8 @@
             <p class="text-[#FCF0F6] mplus indent-[5%]">Backend: {backend}</p>
             <br>
             <div class="flex justify-around sm:w-[40%] w-[60%] m-auto">
-                <button onclick={function(){redirect(repo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] sm:w-[7.5vw] w-[20vw] bg-[#47303E] hover:bg-[#1C1418]">Repo</button>
-                <button onclick={function(){redirect(demo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] sm:w-[7.5vw] w-[20vw] bg-[#47303E] hover:bg-[#1C1418]">Demo</button>
+                <button style={`cursor:url(${clickerCursor}),auto`} onclick={function(){redirect(repo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] sm:w-[7.5vw] w-[20vw] bg-[#47303E] hover:bg-[#1C1418]">Repo</button>
+                <button style={`cursor:url(${clickerCursor}),auto`} onclick={function(){redirect(demo)}} class="text-[#FCF0F6] mplus border-[2px] border-[#D9FCFF] rounded-[15px] h-[40px] sm:w-[7.5vw] w-[20vw] bg-[#47303E] hover:bg-[#1C1418]">Demo</button>
             </div>
         </div>
     </div>

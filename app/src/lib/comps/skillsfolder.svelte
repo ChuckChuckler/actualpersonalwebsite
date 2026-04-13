@@ -2,6 +2,8 @@
     import folder from "$lib/personalwebsite_imgs/folder.png";
     import { onMount } from "svelte";
 
+    import backCursor from "$lib/mikuCursors/Alternate.cur";
+
     import LangIcon from "./langIcon.svelte";
     
     import html from "$lib/personalwebsite_imgs/icons/languages/html.png";
@@ -97,7 +99,7 @@
     </div>
 
     <div style={languagesDirectoryVisibility}>
-    <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+    <button style={`cursor:url(${backCursor}),auto`} onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
     <br>
         <div class="grid grid-cols-5">
             {#each Object.keys(languages) as language}
@@ -107,7 +109,7 @@
     </div>
 
     <div style={frameworksDirectoryVisibility}>
-    <button onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
+    <button style={`cursor:url(${backCursor}),auto`} onclick={returnFiles} class="text-white courier">&lt;&lt; back</button>
     <br>
         <div class="grid grid-cols-5">
             {#each Object.keys(frameworksDict) as framework}
