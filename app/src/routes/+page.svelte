@@ -5,7 +5,7 @@
     import folder_opened from "$lib/personalwebsite_imgs/folder_opened.png"
     import text_file from "$lib/personalwebsite_imgs/text_file.png"
 
-    import Tab from "$lib/comps/Tab.svelte";
+    import Tab from "$lib/comps/tab.svelte";
 
     import Aboutme from "$lib/comps/aboutme.svelte";
     import Contact from "$lib/comps/contact.svelte";
