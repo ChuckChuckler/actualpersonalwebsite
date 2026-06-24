@@ -166,7 +166,6 @@
         <br>
         <div class="w-[60%] m-auto">
             <li class="text-[#fae6f0] mplus text-[18px]">National Latin Honors Society</li>
-            <li class="text-[#fae6f0] mplus text-[18px]">Latin Club member</li>
             <li class="text-[#fae6f0] mplus text-[18px]">Acapella club member</li>
             <li class="text-[#fae6f0] mplus text-[18px]">Women in Computer Science member</li>
             <li class="text-[#fae6f0] mplus text-[18px]">Hack Club member</li>
