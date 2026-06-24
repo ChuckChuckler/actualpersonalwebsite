@@ -28,6 +28,10 @@
     }
 
     let hackathonsList:Record<string,hackathon>={
+        "Sleepover.exe":{
+            image:sleepover,
+            link:"https://sleepover.hackclub.com/"
+        },
         "Hack for Humanity.exe":{
             image:hackforhumanity,
             link:"https://hack-for-humanity-26.devpost.com/"

@@ -12,6 +12,8 @@
     import notmyelement from "$lib/personalwebsite_imgs/previews/notmyelementPreview.png";
     import weissSchwarz from "$lib/personalwebsite_imgs/previews/weissSchwarzSimulator.png";
     import animalBook from "$lib/personalwebsite_imgs/previews/myAnimalBookPhoto1.png";
+    import sillysimpli from "$lib/personalwebsite_imgs/previews/sillysimpli.png";
+    import fisher from "$lib/personalwebsite_imgs/previews/onenightfisher.png";
     
     import treeAssistant from "$lib/personalwebsite_imgs/otherProjects/treeAssistant.png";
     import punnettPractice from "$lib/personalwebsite_imgs/otherProjects/punnett.png";
@@ -36,6 +38,8 @@
     import quotegenerator from "$lib/personalwebsite_imgs/otherProjects/inspoQuotes.png";
     import personalwebsite2 from "$lib/personalwebsite_imgs/otherProjects/alsoOldPersonalWebsite.png";
     import danda from "$lib/personalwebsite_imgs/otherProjects/daphneAndApollo.png";
+    import apushTimeline from "$lib/personalwebsite_imgs/otherProjects/apushTimelineApp.png";
+    import springPendulum from "$lib/personalwebsite_imgs/otherProjects/springPendulumGame.png";
 
     let featured:any;
     let others:any;
@@ -83,6 +87,18 @@
             repo:"https://github.com/ChuckChuckler/weiss-schwarz-pjsk",
             demo:"https://ws-prsk.vercel.app/"
         },
+        "One Night at Fisher's":{
+            img:fisher,
+            desc:"Five Nights at Freddy's, but instead of playing as a security guard surviving animatronics haunted by the ghosts of kids, you play as a compsci teacher trying to stay away from annoying students. I love this project so much",
+            completed:"June 2026",
+            time:"35hrs",
+            techStack:{
+                frontend:"Godot, GDScript",
+                backend:"is there one???"
+            },
+            repo:"https://github.com/ChuckChuckler/five-nights-at-fishers",
+            demo:"https://sluggysoup.itch.io/one-night-at-fishers"
+        },
         "My Animal Book":{
             img:animalBook,
             desc:"An online animal journal that teaches users about endangered animals in their area and how to protect them. Also one of my favorites",
@@ -107,6 +123,18 @@
             repo:"https://github.com/ChuckChuckler/apollo",
             demo:"https://devpost.com/software/apollo-fa1up2"
         },
+        "SillySimpli":{
+            img:sillysimpli,
+            desc:"Practice simplifying with radicals with the help of dad jokes-- with every right answer, unlock more letters for the punchline!",
+            completed:"Jan 2025",
+            time:"17hrs",
+            techStack:{
+                frontend:"HTML5, CSS3, JS",
+                backend:"Node/Express, EJS, GeminiAPI",
+            },
+            repo:"https://github.com/ChuckChuckler/sillysimpli",
+            demo:"https://sillysimpli-priv.onrender.com/"
+        },
         "That's Not My Element!":{
             img:notmyelement,
             desc:"A 2D chemistry game based on That's Not My Neighbor! featuring elements from the periodic table. Another one of my favorites!",
@@ -129,6 +157,18 @@
     }
 
     let otherProjects:Record<string,otherProject>={
+        "Fun Spring/Pendulum Game ft. Rui":{
+            preview:springPendulum,
+            desc:"A super very fun game where you play as Tsukasa and answer physics question so you don't get shot out of a cannon!!! Can you be the ultimate physics alpha...",
+            repo:"https://github.com/ChuckChuckler/fun-rui-game",
+            demo:"https://sluggysoup.itch.io/fun-springpendulum-game-ft-rui"
+        },
+        "Apush Timeline App":{
+            preview:apushTimeline,
+            desc:"An APUSH timeline practice app! There are two practice modes: one, where you can sort different events into the decade in which they happened; two, a Gimkit-esque learn mode (still under construction).",
+            repo:"https://github.com/ChuckChuckler/apush-timeline-app",
+            demo:"https://apush-timeline-app.vercel.app/"
+        },
         "Daphne and Apollo":{
             preview:danda,
             desc:"A horror game I made for my Latin project where you play as Daphne running from Apollo in a forest. First time making a 3D game!!",
