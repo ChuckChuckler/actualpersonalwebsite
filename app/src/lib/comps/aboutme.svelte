@@ -61,35 +61,35 @@
     <h1 class="text-center text-[2.5vw] text-[#fce1f6] courier">❀ Hobbies ❀</h1>
     <br>
     <div class="border-[2px] border-[#abf1f7] box-border p-[10px] grid grid-cols-4 gap-[10px] rounded-[20px] bg-[#455e5e]">
-        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-hidden scrollHidden">
-            <div class="w-[100%] h-[100%] relative opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
+        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative overflow-hidden scrollHidden">
+            <div class="absolute w-[100%] h-[100%] opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
                 <h1 class="text-[1.7vw] courier text-[#fce1f6] absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%]">Reading</h1>
             </div>
-            <div class="absolute w-[90%] h-[100%] overflow-auto top-5">
-                <p class="text-[1.25vw] text-[#fce1f6] bg-[#1d2429] mplus">I  love reading good books, especially classics. Nabokov is my favorite author.<br>I also love reading Greek and Roman poetry. And by extension, I love all things Latin! Currently taking it in school (and hope to take Greek in college). Agricola tres porcos in proelio necavit et sum discipula Linguae Latinae (ദ്ദി˙ᗜ˙)</p>
+            <div class="absolute w-[90%] h-[100%] overflow-auto top-5 left-2">
+                <p class="text-[1.25vw] text-[#fce1f6] bg-[#1d2429] mplus">I  love reading good books, especially classics.<br>I also love reading Greek and Roman poetry. And by extension, I love all things Latin! Currently taking it in school (and hope to take Greek in college). Agricola tres porcos in proelio necavit et sum discipula Linguae Latinae (ദ്ദി˙ᗜ˙)</p>
             </div>
         </div>
-        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-hidden scrollHidden">
-            <div class="w-[100%] h-[100%] relative opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
+        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative overflow-hidden scrollHidden">
+            <div class="absolute w-[100%] h-[100%] opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
                 <h1 class="text-[1.7vw] courier text-[#fce1f6] absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%]">Writing</h1>
             </div>
-            <div class="absolute w-[90%] h-[100%] overflow-auto top-5">
+            <div class="absolute w-[90%] h-[100%] overflow-auto top-5 left-2">
                 <p class="text-[1.25vw] text-[#fce1f6] bg-[#1d2429] mplus">I've been writing maybe longer than I've been coding. I absolutely love writing, especially creative writing. I like writing poems and short stories. And fanfiction. No, you cannot have my Ao3 (◑_◑)</p>
             </div>
         </div>
-        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-hidden scrollHidden">
-            <div class="w-[100%] h-[100%] relative opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
+        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative overflow-hidden scrollHidden">
+            <div class="absolute w-[100%] h-[100%] opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
                 <h1 class="text-[1.7vw] courier text-[#fce1f6] absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%]">Drawing</h1>
             </div>
-            <div class="absolute w-[90%] h-[100%] overflow-auto top-5">
-                <p class="text-[1.25vw] text-[#fce1f6] bg-[#1d2429] mplus">Not much to say here. I like drawing. I'm not particularly exceptional at it, but I like it anyways. My #1 favorite thing to draw is my wife Rui Kamishiro ♡(˃͈ ˂͈ )</p>
+            <div class="absolute w-[90%] h-[100%] overflow-auto top-5 left-2">
+                <p class="text-[1.25vw] text-[#fce1f6] bg-[#1d2429] mplus">Not much to say here. I like drawing. I'm not particularly exceptional at it, but I like it anyways. My #1 favorite thing to draw is my wife Rui Kamishiro<br>♡(˃͈ ˂͈ )</p>
             </div>
         </div>
-        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative box-border p-[13px] overflow-hidden scrollHidden">
-            <div class="w-[101%] h-[100%] relative opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
+        <div class="h-[60vh] bg-[#1d2429] rounded-[18px] relative overflow-hidden scrollHidden">
+            <div class="absolute w-[100%] h-[100%] opacity-100 hover:opacity-0 transition-opacity duration-500 ease-out bg-[#1d2429] z-5">
                 <h1 class="text-[1.7vw] courier text-[#fce1f6] absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%]">Music</h1>
             </div>
-            <div class="absolute w-[90%] h-[100%] overflow-auto top-5">
+            <div class="absolute w-[90%] h-[100%] overflow-auto top-5 left-2">
                 <p class="text-[1.25vw] text-[#fce1f6] bg-[#1d2429] mplus">If there was one thing I was just as passionate as coding about, if not more, it would be music. I play piano. I'm a member of both choir and the acapella group at my school. Most of all, I love music theory and making music! Perchance I'll be able to get a Soundcloud or something running sometime soon (˶ˆᗜˆ˵)</p>
             </div>
         </div>
