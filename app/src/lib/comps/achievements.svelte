@@ -12,11 +12,14 @@
     import dvhacks from "$lib/personalwebsite_imgs/hackathons_ysws/dvhacks.jpg";
     import kurius from "$lib/personalwebsite_imgs/hackathons_ysws/kuriushacks.png";
     import hackhumanity from "$lib/personalwebsite_imgs/hackathons_ysws/hackforhumanity.png";
+    import award from "$lib/personalwebsite_imgs/achievement_icons/awardicon.png";
+    import rit from "$lib/personalwebsite_imgs/achievement_icons/ritLogo.png";
 
     import nle from "$lib/personalwebsite_imgs/achievement_icons/nleIcon.png";
     import latin from "$lib/personalwebsite_imgs/achievement_icons/latin.png";
     import youngwriters from "$lib/personalwebsite_imgs/achievement_icons/youngwriters.png";
     import history from "$lib/personalwebsite_imgs/achievement_icons/book.png";
+    import ihateyou from "$lib/personalwebsite_imgs/achievement_icons/burn.jpeg"
 
     let visibility:string = $state("display:none");
 
@@ -39,6 +42,18 @@
     }
 
     let codingAchievements:Record<string,achievement>={
+        "RIT Computing Award (with scholarship)":{
+            placement:"",
+            img:rit,
+            year:"2026",
+            link:"https://www.rit.edu/admissions/hsawards"
+        },
+        "Academic Achievement in AP Comp Sci":{
+            placement:"",
+            img:award,
+            year:"2026",
+            link:""
+        },
         "Hack For Humanity":{
             placement:"14th-42nd Place",
             img:hackhumanity,
@@ -90,10 +105,22 @@
             year:"2026",
             link:""
         },
+        "National Latin Exam Book Award":{
+            placement:"",
+            img:nle,
+            year:"2026",
+            link:""
+        },
         "Outstanding Achievement in Latin":{
             placement:"",
             img:latin,
             year:"2023",
+            link:""
+        },
+        "CollegeBoard School Recognition Award":{
+            placement:"",
+            img:ihateyou,
+            year:"2026",
             link:""
         },
         "Short story published in Young Writers USA anthology":{
